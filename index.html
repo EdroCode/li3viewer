@@ -1009,7 +1009,10 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
 </script>
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js')
+  // updateViaCache: 'none' stops the browser from ever using an HTTP-cached
+  // copy of service-worker.js itself, so a new version is always detected.
+  navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' })
+    .then(reg => reg.update())
     .catch(err => console.error('SW registration failed:', err));
 }
 </script>
