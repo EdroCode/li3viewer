@@ -1,0 +1,1039 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Testes LI3 por Grupo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: uma coluna de ferramenta. Upload e opções no topo, separadores (Grupo, Comparar, Turma, Ranking) e uma página de cada vez. */
+:root {
+  --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --page: #f1f1ee;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #6b6964;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --line: rgba(11, 11, 11, 0.10);
+  --accent: #1c5cab;
+  --accent-ink: #ffffff;
+  --focus: #2a78d6;
+  --hover: rgba(11, 11, 11, 0.06);
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --st-ok: #0ca30c;
+  --st-ok-ink: #ffffff;
+  --st-wrong: #fab219;
+  --st-wrong-ink: #0b0b0b;
+  --st-noexec: #ec835a;
+  --st-noexec-ink: #0b0b0b;
+  --st-nocompile: #d03b3b;
+  --st-nocompile-ink: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --ink: #f0efec;
+    --ink-2: #c3c2b7;
+    --muted: #a3a198;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --line: rgba(255, 255, 255, 0.10);
+    --accent: #6da7ec;
+    --accent-ink: #0b0b0b;
+    --focus: #6da7ec;
+    --hover: rgba(255, 255, 255, 0.07);
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --ink: #f0efec;
+  --ink-2: #c3c2b7;
+  --muted: #a3a198;
+  --grid: #2c2c2a;
+  --axis: #383835;
+  --line: rgba(255, 255, 255, 0.10);
+  --accent: #6da7ec;
+  --accent-ink: #0b0b0b;
+  --focus: #6da7ec;
+  --hover: rgba(255, 255, 255, 0.07);
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.5;
+  padding-block: 28px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.page { display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.page[hidden] { display: none; }
+h1 { font-size: 26px; line-height: 1.2; font-weight: 600; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.lede { margin: 6px 0 0; color: var(--ink-2); max-width: 62ch; }
+.mono { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+
+/* Upload */
+.drop {
+  position: relative;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  padding: 16px 18px;
+  border: 1.5px dashed var(--axis);
+  border-radius: 8px;
+  background: var(--surface);
+  cursor: pointer;
+}
+.drop:hover, .drop.over { border-color: var(--accent); background: var(--hover); }
+.drop:focus-within { outline: 2px solid var(--focus); outline-offset: 2px; }
+.drop input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+.drop-main { min-width: 0; }
+.drop-title { font-weight: 600; }
+.drop-sub { color: var(--ink-2); font-size: 13.5px; overflow-wrap: anywhere; }
+.btn {
+  font: inherit; font-weight: 500; font-size: 14px;
+  padding: 7px 14px; border-radius: 6px;
+  background: var(--accent); color: var(--accent-ink);
+  border: 1px solid transparent; pointer-events: none;
+}
+.error { color: #b42318; font-weight: 500; margin: 0; }
+:root[data-theme="dark"] .error { color: #ff8b88; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .error { color: #ff8b88; } }
+
+/* Navegação */
+.nav { display: flex; gap: 4px; border-bottom: 1px solid var(--axis); overflow-x: auto; }
+.nav a {
+  padding: 9px 14px; color: var(--ink-2); text-decoration: none; font-weight: 500; font-size: 15px;
+  border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap;
+}
+.nav a:hover { color: var(--ink); background: var(--hover); }
+.nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+.nav a:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+
+/* Controlos */
+.controls { display: flex; align-items: flex-end; gap: 18px; flex-wrap: wrap; }
+.field { display: flex; flex-direction: column; gap: 4px; }
+.field label { font-size: 12.5px; color: var(--ink-2); letter-spacing: 0.02em; }
+.field[hidden], .check[hidden] { display: none; }
+select {
+  font: inherit; font-family: var(--font-data); font-size: 15px;
+  color: var(--ink); background: var(--surface);
+  border: 1px solid var(--axis); border-radius: 6px;
+  padding: 7px 12px; min-width: 120px;
+}
+select:focus-visible, button:focus-visible, .check input:focus-visible, svg.plot:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.check { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; color: var(--ink-2); padding-bottom: 7px; }
+.check input { width: 16px; height: 16px; accent-color: var(--accent); }
+.tag { font-size: 12.5px; color: var(--ink-2); padding: 3px 9px; border: 1px solid var(--axis); border-radius: 999px; margin-bottom: 7px; }
+.note { margin: 0; padding: 10px 14px; border: 1px solid var(--axis); border-radius: 8px; color: var(--ink-2); font-size: 13.5px; background: var(--surface); }
+
+/* Resumo */
+.headline { margin: 0; font-size: 17px; line-height: 1.45; max-width: 70ch; text-wrap: pretty; }
+.headline b { font-weight: 600; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+.stat {
+  display: grid; grid-template-columns: auto 1fr; column-gap: 10px; align-items: start;
+  padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; min-width: 0;
+}
+.sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-top: 5px; flex: none; }
+.sw-ok { background-color: var(--st-ok); }
+.sw-wrong { background-color: var(--st-wrong); }
+.sw-noexec { background-color: var(--st-noexec); }
+.sw-nocompile { background-color: var(--st-nocompile); }
+.sw-a { background-color: var(--series-1); }
+.sw-b { background-color: var(--series-2); }
+.sw-tie { background-color: var(--axis); }
+.tex .sw-wrong { background-image: repeating-linear-gradient(45deg, rgba(0,0,0,.38) 0 1.5px, transparent 1.5px 5px); }
+.tex .sw-noexec { background-image: repeating-linear-gradient(135deg, rgba(0,0,0,.38) 0 1.5px, transparent 1.5px 5px); }
+.tex .sw-nocompile { background-image: repeating-linear-gradient(45deg, rgba(0,0,0,.38) 0 1.5px, transparent 1.5px 5px), repeating-linear-gradient(135deg, rgba(0,0,0,.38) 0 1.5px, transparent 1.5px 5px); }
+.stat-n { font-family: var(--font-data); font-size: 22px; font-weight: 500; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.stat-n small { font-size: 13px; color: var(--muted); font-weight: 400; margin-left: 6px; }
+.stat-l { grid-column: 2; font-size: 13px; color: var(--ink-2); line-height: 1.35; }
+.legend { display: flex; gap: 8px 20px; flex-wrap: wrap; font-size: 13px; color: var(--ink-2); }
+.legend span.i { display: inline-flex; align-items: center; gap: 7px; }
+.legend .sw { margin-top: 0; }
+
+/* Gráficos */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 14px 10px; min-width: 0; }
+.chart { position: relative; width: 100%; }
+svg.plot { display: block; width: 100%; height: auto; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.s-ok { fill: var(--st-ok); }
+.s-wrong { fill: var(--st-wrong); }
+.s-noexec { fill: var(--st-noexec); }
+.s-nocompile { fill: var(--st-nocompile); }
+.d-a { fill: var(--series-1); }
+.d-b { fill: var(--series-2); }
+.d-tie { fill: var(--axis); }
+.run-ok { fill: var(--st-ok-ink); stroke: var(--st-ok); }
+.run-wrong { fill: var(--st-wrong-ink); stroke: var(--st-wrong); }
+.run-noexec { fill: var(--st-noexec-ink); stroke: var(--st-noexec); }
+.run-nocompile { fill: var(--st-nocompile-ink); stroke: var(--st-nocompile); }
+.run-t { font-family: var(--font-ui); font-size: 11.5px; font-weight: 500; paint-order: stroke; stroke-width: 7px; stroke-linejoin: round; text-anchor: middle; pointer-events: none; }
+.cap { font-family: var(--font-ui); font-size: 12px; fill: var(--ink-2); }
+.tick { font-family: var(--font-data); font-size: 11px; fill: var(--muted); }
+.gridl { stroke: var(--grid); stroke-width: 1; }
+.axisl { stroke: var(--axis); stroke-width: 1; }
+.lineS { fill: none; stroke: var(--series-1); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.dot { fill: var(--series-1); stroke: var(--surface); stroke-width: 2; }
+.hl { fill: var(--ink); opacity: 0.10; pointer-events: none; }
+.hlline { stroke: var(--ink); stroke-width: 1; opacity: 0.55; pointer-events: none; }
+.empty-bars { font-size: 13px; fill: var(--muted); }
+.tip {
+  position: absolute; z-index: 5; pointer-events: none;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--axis); border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
+  padding: 9px 12px; font-size: 12.5px; line-height: 1.45; min-width: 190px; max-width: 270px;
+}
+.tip[hidden] { display: none; }
+.tip-h { display: flex; align-items: center; gap: 8px; font-weight: 600; margin-bottom: 4px; }
+.tip-h .sw, .tip-s .sw { margin-top: 0; }
+.tip-s { display: flex; align-items: center; gap: 8px; color: var(--ink-2); margin-bottom: 4px; }
+.tip dl { margin: 0; display: grid; grid-template-columns: auto 1fr; column-gap: 12px; row-gap: 1px; }
+.tip dt { color: var(--muted); }
+.tip dd { margin: 0; text-align: right; font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+.tip hr { border: 0; border-top: 1px solid var(--grid); margin: 7px 0; }
+.hint { margin: 4px 2px 2px; font-size: 12.5px; color: var(--muted); }
+
+/* Tabelas */
+.tbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.linkbtn {
+  font: inherit; font-size: 14px; font-weight: 500; color: var(--accent);
+  background: none; border: 1px solid var(--axis); border-radius: 6px; padding: 6px 12px; cursor: pointer;
+}
+.linkbtn:hover { background: var(--hover); }
+.tablewrap { overflow: auto; max-height: 520px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+.tablewrap.top { margin-top: 12px; max-height: 440px; }
+.tablewrap[hidden] { display: none; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { padding: 6px 10px; text-align: right; white-space: nowrap; border-bottom: 1px solid var(--grid); }
+th { position: sticky; top: 0; background: var(--surface); color: var(--ink-2); font-weight: 500; font-size: 12px; z-index: 1; border-bottom: 1px solid var(--axis); }
+td { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+th:first-child, td:first-child { text-align: left; }
+th.l, td.l { text-align: left; }
+td.state { font-family: var(--font-ui); }
+td.state .sw { margin: 0 8px 0 0; vertical-align: -1px; }
+tr.sel td { background: var(--hover); }
+.sortbtn { font: inherit; font-size: 12px; font-weight: 500; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; display: inline-flex; gap: 4px; align-items: center; }
+.sortbtn .ar { font-size: 9px; opacity: 0.35; }
+th[aria-sort] .ar { opacity: 1; color: var(--ink); }
+.gbtn { font: inherit; font-family: var(--font-data); color: var(--accent); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.cmp td:nth-child(n+2), .cmp th:nth-child(n+2) { text-align: right; }
+.cmp td:first-child { font-family: var(--font-ui); }
+.cmp td:first-child .sw { margin: 0 8px 0 0; vertical-align: -1px; }
+.foot { color: var(--muted); font-size: 12.5px; margin: 0; max-width: 80ch; }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Testes LI3 por grupo</h1>
+    <p class="lede">Larga o ficheiro <span class="mono">li3_dump.json</span> e explora os resultados: um grupo, dois grupos lado a lado, a turma toda ou o ranking de um teste.</p>
+  </header>
+
+  <div class="drop" id="drop" style="cursor:default;">
+    <div class="drop-main">
+      <div class="drop-title" id="dropTitle">Dados não carregados</div>
+      <div class="drop-sub" id="dropSub">Clica o botão para buscar o ficheiro li3_dump.json</div>
+    </div>
+    <button type="button" class="btn" id="fetchBtn" style="pointer-events:auto;cursor:pointer;">Carregar dados</button>
+  </div>
+  <p class="error" id="err" role="alert" hidden></p>
+
+  <nav class="nav" aria-label="Páginas">
+    <a href="#grupo" data-p="grupo">Grupo</a>
+    <a href="#comparar" data-p="comparar">Comparar</a>
+    <a href="#turma" data-p="turma">Turma</a>
+    <a href="#ranking" data-p="ranking">Ranking</a>
+  </nav>
+
+  <section class="controls" aria-label="Opções">
+    <div class="field" id="fGroup" data-pages="grupo comparar ranking">
+      <label for="group">Grupo</label>
+      <select id="group"></select>
+    </div>
+    <div class="field" id="fGroupB" data-pages="comparar" hidden>
+      <label for="groupB">Comparar com</label>
+      <select id="groupB"></select>
+    </div>
+    <div class="field" id="fTest" data-pages="ranking" hidden>
+      <label for="testSel">Teste</label>
+      <select id="testSel"></select>
+    </div>
+    <label class="check" id="fOnly" data-pages="ranking" hidden><input type="checkbox" id="onlyRan"><span>Só quem executou</span></label>
+    <label class="check"><input type="checkbox" id="tex"><span>Texturas nas cores</span></label>
+    <span class="tag" id="sampleTag" hidden>Dados de exemplo</span>
+  </section>
+  <p class="note" id="sampleNote" hidden>Estas páginas precisam do ficheiro completo. Com os dados de exemplo só há 2 grupos, por isso os números não representam a turma.</p>
+
+  <!-- GRUPO -->
+  <div class="page" id="page-grupo">
+    <p class="headline" id="gHeadline" aria-live="polite"></p>
+    <section class="stats" id="gStats" aria-label="Contagem por estado"></section>
+    <section class="card">
+      <div class="chart" id="gChart">
+        <svg class="plot" id="gPlot" role="group" tabindex="0" aria-label="Estado e tempo de execução por teste. Usa as setas esquerda e direita para percorrer os testes."></svg>
+        <div class="tip" id="gTip" role="status" aria-live="polite" hidden></div>
+      </div>
+      <p class="hint">Passa o rato, toca ou usa as setas para ver os detalhes de cada teste.</p>
+    </section>
+    <section>
+      <div class="tbar"><button type="button" class="linkbtn" id="gTblBtn" aria-expanded="false" aria-controls="gTblWrap">Ver tabela</button></div>
+      <div class="tablewrap top" id="gTblWrap" hidden><table id="gTbl"></table></div>
+    </section>
+    <p class="foot" id="gFoot"></p>
+  </div>
+
+  <!-- COMPARAR -->
+  <div class="page" id="page-comparar" hidden>
+    <p class="headline" id="cHeadline" aria-live="polite"></p>
+    <section class="card">
+      <div class="chart" id="cChart">
+        <svg class="plot" id="cPlot" role="group" tabindex="0" aria-label="Estado por teste de dois grupos e quem está à frente. Usa as setas esquerda e direita para percorrer os testes."></svg>
+        <div class="tip" id="cTip" role="status" aria-live="polite" hidden></div>
+      </div>
+      <div class="legend" id="cLegend" style="margin-top:8px"></div>
+      <p class="hint">Em cada teste ganha quem foi mais longe: executou com tudo certo, executou com erros, compilou, não compilou. Em caso de empate no estado, conta o número de queries certas.</p>
+    </section>
+    <section class="tablewrap" style="max-height:none"><table class="cmp" id="cTbl"></table></section>
+  </div>
+
+  <!-- TURMA -->
+  <div class="page" id="page-turma" hidden>
+    <p class="headline" id="tHeadline" aria-live="polite"></p>
+    <section class="stats" id="tStats" aria-label="Grupos por estado no último teste"></section>
+    <section class="card">
+      <div class="chart" id="tChart">
+        <svg class="plot" id="tPlot" role="group" tabindex="0" aria-label="Percentagem de grupos por estado e média de queries certas, por teste. Usa as setas esquerda e direita para percorrer os testes."></svg>
+        <div class="tip" id="tTip" role="status" aria-live="polite" hidden></div>
+      </div>
+      <p class="hint">Cada coluna é um teste. Em baixo, a média de queries certas conta os grupos que não compilaram como 0%.</p>
+    </section>
+  </div>
+
+  <!-- RANKING -->
+  <div class="page" id="page-ranking" hidden>
+    <p class="headline" id="rHeadline" aria-live="polite"></p>
+    <div class="tablewrap" id="rWrap"><table id="rTbl"></table></div>
+    <p class="foot">Clica num número de grupo para abrir a página desse grupo. Clica nos cabeçalhos para ordenar.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* Dados de exemplo (grupos 14 e 45 do ficheiro de 8 de novembro).
+     Linha: [id, compilou, executou, timeout, semMemoria, certas[], erradas[], validacao, tempoS, memMB, fugasMB] */
+  var SAMPLE = {"G14":[[1,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[2,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[3,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[4,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[5,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[6,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[7,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[8,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[9,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[10,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[11,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[12,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[13,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[14,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[15,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[16,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[17,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[18,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[19,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[20,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[21,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[22,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[23,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[24,1,1,0,0,[8,0,0],[2,10,10],0,12.2,642.82,0.017],[25,1,1,0,0,[10,0,0],[0,10,10],100,11.7,641.484,0.017],[26,1,1,0,0,[10,0,0],[0,10,10],0,12.5,641.748,0.017],[27,1,1,0,0,[10,0,0],[0,10,10],100,12.1,601.288,0.017],[28,1,1,0,0,[10,0,0],[0,10,10],96,11.7,601.524,0.017],[29,1,0,0,0,[0,0,0],[10,10,10],100,11.6,601.288,18.655],[30,1,1,0,0,[10,10,10],[0,0,0],100,13.3,601.844,0.017],[31,1,1,0,0,[10,10,10],[0,0,0],100,11,601.544,0.017],[32,1,1,0,0,[10,10,10],[0,0,0],100,9.7,601.856,0.017],[33,1,1,0,0,[10,10,10],[0,0,0],100,10.5,601.444,0.017],[34,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[35,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[36,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[37,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[38,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[39,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[40,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[41,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[42,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[43,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[44,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[45,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[46,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[47,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[48,1,0,0,0,[0,0,0],[10,10,10],0,0,2.56,null],[49,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[50,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[51,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[52,1,1,0,0,[10,0,10],[0,10,0],100,12.9,601.472,4.339],[53,1,1,0,0,[10,10,10],[0,0,0],100,14,601.672,6.437],[54,1,1,0,0,[10,10,10],[0,0,0],100,13.8,601.476,0.017],[55,1,1,0,0,[10,10,10],[0,0,0],100,13.2,601.42,0.017],[56,1,1,0,0,[10,10,10],[0,0,0],100,13.2,601.604,0.017],[57,1,1,0,0,[10,10,10],[0,0,0],100,14.1,601.544,0.017],[58,1,1,0,0,[10,10,10],[0,0,0],100,14,601.604,0.017],[59,1,1,0,0,[10,10,10],[0,0,0],100,13.5,601.292,0.017],[60,1,1,0,0,[10,10,10],[0,0,0],100,14.1,601.476,0.017],[61,1,1,0,0,[10,10,10],[0,0,0],100,14.6,601.544,0.017],[62,1,1,0,0,[10,10,10],[0,0,0],100,13.3,601.792,0.017],[63,1,1,0,0,[10,10,10],[0,0,0],100,14.5,601.288,0.017],[64,1,1,0,0,[10,10,10],[0,0,0],100,13.4,601.604,0.017],[65,1,1,0,0,[10,10,10],[0,0,0],100,12.8,601.416,0.017],[66,1,1,0,0,[10,10,10],[0,0,0],100,13.8,601.728,0.017],[67,1,1,0,0,[10,10,10],[0,0,0],100,13,601.544,0.017],[68,1,1,0,0,[10,10,10],[0,0,0],100,14,601.604,0.017],[69,1,1,0,0,[10,10,10],[0,0,0],100,13.4,601.292,0.017],[70,1,1,0,0,[10,10,10],[0,0,0],100,13.6,601.728,0.017],[71,1,1,0,0,[10,10,10],[0,0,0],100,15.3,601.164,0.017],[72,1,1,0,0,[10,10,10],[0,0,0],100,15.4,601.372,0.017],[73,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[74,1,1,0,0,[10,10,10],[0,0,0],100,13.6,601.728,0.017],[75,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[76,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[77,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[78,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[79,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[80,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[81,1,1,0,0,[10,10,10],[0,0,0],100,13.3,601.568,0.017],[82,1,1,0,0,[10,10,10],[0,0,0],100,14.3,611.62,0.017],[83,1,1,0,0,[10,10,10],[0,0,0],100,12.6,601.312,0.017],[84,1,1,0,0,[10,10,10],[0,0,0],100,14,611.62,0.017],[85,1,1,0,0,[10,10,10],[0,0,0],100,15.1,601.568,0.017],[86,1,1,0,0,[10,10,10],[0,0,0],100,15.7,611.52,0.017],[87,1,1,0,0,[10,10,10],[0,0,0],100,15.4,601.288,0.017],[88,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[89,1,1,0,0,[10,10,10],[0,0,0],100,14.6,601.568,0.017],[90,1,1,0,0,[10,10,10],[0,0,0],100,12.4,611.544,0.017],[91,1,1,0,0,[10,10,10],[0,0,0],100,12.1,601.308,0.017],[92,1,1,0,0,[10,10,10],[0,0,0],100,13.9,611.62,0.017],[93,1,1,0,0,[10,10,10],[0,0,0],100,12.2,601.784,0.017],[94,1,1,0,0,[10,10,10],[0,0,0],100,12.2,611.876,0.017],[95,1,1,0,0,[10,10,10],[0,0,0],100,12.7,601.312,0.017],[96,1,1,0,0,[10,10,10],[0,0,0],100,12.2,611.876,0.017],[97,1,1,0,0,[10,10,10],[0,0,0],100,12.8,601.308,0.017],[98,1,1,0,0,[10,10,10],[0,0,0],100,12.5,611.968,0.017],[99,1,1,0,0,[10,10,10],[0,0,0],100,14.4,601.564,0.017],[100,1,1,0,0,[10,10,10],[0,0,0],100,13,611.876,0.017],[101,1,1,0,0,[10,10,10],[0,0,0],100,13.2,601.372,0.017],[102,1,1,0,0,[10,10,10],[0,0,0],100,13.4,611.62,0.017],[103,1,1,0,0,[10,10,10],[0,0,0],100,14.6,601.284,0.017],[104,1,1,0,0,[10,10,10],[0,0,0],100,13.5,611.748,0.017],[105,1,1,0,0,[10,10,10],[0,0,0],100,14.7,601.296,0.017],[106,1,1,0,0,[10,10,10],[0,0,0],100,13.3,611.624,0.017],[107,1,1,0,0,[10,10,10],[0,0,0],100,12.8,601.472,0.017],[108,1,1,0,0,[10,10,10],[0,0,0],100,13.1,611.876,0.017],[109,1,1,0,0,[10,10,10],[0,0,0],100,13.3,601.284,0.017],[110,1,1,0,0,[10,10,10],[0,0,0],100,16.8,611.624,0.017],[111,1,1,0,0,[10,10,10],[0,0,0],100,13.4,601.312,0.017],[112,1,1,0,0,[10,10,10],[0,0,0],100,14,611.608,0.017],[113,1,1,0,0,[10,10,10],[0,0,0],100,13.2,601.564,0.017],[114,1,1,0,0,[10,10,10],[0,0,0],100,17.3,611.88,0.017],[115,1,1,0,0,[10,10,10],[0,0,0],100,14.3,601.312,0.017],[116,1,1,0,0,[10,10,10],[0,0,0],100,12.2,611.62,0.017],[117,1,1,0,0,[10,10,10],[0,0,0],100,13.3,601.304,0.017],[118,1,1,0,0,[10,10,10],[0,0,0],100,13.8,611.648,0.017],[119,1,1,0,0,[10,10,10],[0,0,0],100,13.4,601.308,0.017],[120,1,1,0,0,[10,10,10],[0,0,0],100,13.9,611.724,0.017],[121,1,1,0,0,[10,10,10],[0,0,0],100,13.2,601.436,0.017],[122,1,1,0,0,[10,10,10],[0,0,0],100,14.7,612.008,0.017],[123,1,1,0,0,[10,10,10],[0,0,0],100,13.2,601.568,0.017],[124,1,1,0,0,[10,10,10],[0,0,0],100,11.9,611.572,0.017],[125,1,1,0,0,[10,10,10],[0,0,0],100,15.5,601.44,0.017],[126,1,1,0,0,[10,10,10],[0,0,0],100,13.4,601.64,0.017],[127,1,1,0,0,[10,10,10],[0,0,0],100,13.2,611.448,0.017],[128,1,1,0,0,[10,10,10],[0,0,0],100,13.2,611.624,0.017]],"G45":[[1,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[2,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[3,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[4,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[5,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[6,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[7,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[8,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[9,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[10,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[11,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[12,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[13,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[14,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[15,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[16,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[17,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[18,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[19,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[20,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[21,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[22,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[23,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[24,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[25,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[26,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[27,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[28,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[29,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[30,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[31,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[32,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[33,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[34,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[35,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[36,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[37,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[38,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[39,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[40,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[41,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[42,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[43,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[44,1,1,0,0,[0,0,0],[10,10,10],0,0,2.432,0.017],[45,1,1,0,0,[0,0,0],[10,10,10],100,0,2.432,0.017],[46,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[47,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[48,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[49,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[50,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[51,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[52,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[53,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[54,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[55,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[56,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[57,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[58,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[59,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[60,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[61,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[62,1,1,0,0,[0,0,0],[10,10,10],0,0,2.432,0.017],[63,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[64,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[65,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[66,1,1,0,0,[0,0,0],[10,10,10],0,0,2.432,0.017],[67,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[68,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[69,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[70,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[71,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[72,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[73,1,1,0,0,[0,0,0],[10,10,10],100,0,2.432,0.017],[74,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[75,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[76,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[77,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[78,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[79,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[80,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[81,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[82,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[83,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[84,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[85,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[86,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[87,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[88,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[89,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[90,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[91,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[92,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[93,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[94,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[95,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[96,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[97,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[98,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[99,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[100,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[101,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[102,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[103,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[104,1,1,0,0,[10,10,10],[0,0,0],100,16.6,1579.12,0.017],[105,1,1,0,0,[10,10,10],[0,0,0],100,16.3,1578.88,0.017],[106,1,1,0,0,[10,10,10],[0,0,0],100,20.9,1579.124,0.017],[107,1,1,0,0,[10,10,10],[0,0,0],100,14,1579.124,0.017],[108,1,1,0,0,[10,10,10],[0,0,0],100,17.8,1579.252,0.017],[109,1,1,0,0,[10,10,10],[0,0,0],100,12.3,907.648,0],[110,1,1,0,0,[10,10,10],[0,0,0],100,7.5,666.752,0],[111,1,1,0,0,[10,10,10],[0,0,0],100,7.5,667.008,0],[112,1,1,0,0,[10,10,10],[0,0,0],100,6.7,667.136,0],[113,1,1,0,0,[10,10,10],[0,0,0],100,7.3,667.264,0],[114,1,1,0,0,[10,10,10],[0,0,0],100,6.8,667.008,0],[115,1,1,0,0,[10,10,10],[0,0,0],100,7.1,667.264,0],[116,1,1,0,0,[10,10,10],[0,0,0],100,6.4,666.88,0],[117,1,1,0,0,[10,10,10],[0,0,0],100,7.4,667.008,0],[118,1,1,0,0,[10,10,10],[0,0,0],100,6.1,667.136,0],[119,1,1,0,0,[10,10,10],[0,0,0],100,6.9,667.136,0],[120,1,1,0,0,[10,10,10],[0,0,0],100,6.4,667.264,0],[121,1,1,0,0,[10,10,10],[0,0,0],100,7.5,667.264,0],[122,1,1,0,0,[10,10,10],[0,0,0],100,6.4,667.264,0],[123,1,1,0,0,[10,10,10],[0,0,0],100,7.8,667.264,0],[124,1,1,0,0,[10,10,10],[0,0,0],100,6,667.136,0],[125,1,1,0,0,[10,10,10],[0,0,0],100,6.2,667.264,0],[126,1,1,0,0,[10,10,10],[0,0,0],100,6.9,667.008,0],[127,1,1,0,0,[10,10,10],[0,0,0],100,6.9,667.264,0],[128,1,1,0,0,[10,10,10],[0,0,0],100,6.2,667.008,0]]};
+
+  var STATES = [
+    { id: 'ok',        label: 'Executou, queries todas certas', short: 'Tudo certo' },
+    { id: 'wrong',     label: 'Executou, queries com erros',    short: 'Com erros' },
+    { id: 'noexec',    label: 'Compilou, não executou',         short: 'Não executou' },
+    { id: 'nocompile', label: 'Não compilou',                   short: 'Não compilou' }
+  ];
+  var SBY = {}; STATES.forEach(function (s) { SBY[s.id] = s; });
+  var SRANK = { nocompile: 0, noexec: 1, wrong: 2, ok: 3 };
+  var PAGES = ['grupo', 'comparar', 'turma', 'ranking'];
+
+  var $ = function (id) { return document.getElementById(id); };
+  var data = {};            // grupo -> linhas ordenadas por teste
+  var maps = {};            // grupo -> {id: linha}
+  var agg = { ids: [], per: {} };
+  var current = null, currentB = null;
+  var isSample = true;
+  var page = 'grupo';
+  var rankSort = { key: 'q', dir: -1 };
+
+  /* ---------- Dados ---------- */
+  function sum(a) { var t = 0; for (var i = 0; i < a.length; i++) t += (+a[i] || 0); return t; }
+  function classify(r) {
+    if (!r.compiled) return 'nocompile';
+    if (!r.executed) return 'noexec';
+    if (sum(r.wq) > 0) return 'wrong';
+    return 'ok';
+  }
+  function qpct(r) { var c = sum(r.cq), t = c + sum(r.wq); return t ? 100 * c / t : 0; }
+  function fromApi(x) {
+    return {
+      id: x.testId, compiled: !!x.compiled, executed: !!x.executed, timeout: !!x.timeout, oom: !!x.outOfMemory,
+      cq: x.correctQueries || [], wq: x.wrongQueries || [],
+      val: x.validationScore, dur: x.durationS, mem: x.maxMemoryMb, leaks: x.memoryLeaksMb
+    };
+  }
+  function fromSample(a) {
+    return { id: a[0], compiled: !!a[1], executed: !!a[2], timeout: !!a[3], oom: !!a[4], cq: a[5], wq: a[6], val: a[7], dur: a[8], mem: a[9], leaks: a[10] };
+  }
+  function sampleData() {
+    var out = {};
+    Object.keys(SAMPLE).forEach(function (g) { out[g] = SAMPLE[g].map(fromSample).sort(function (a, b) { return a.id - b.id; }); });
+    return out;
+  }
+  function parseDump(obj) {
+    var m = {}, tests = {};
+    function add(rec) {
+      if (!rec || !rec.repoId || typeof rec.testId !== 'number') return;
+      (m[rec.repoId] = m[rec.repoId] || {})[rec.testId] = fromApi(rec);
+      tests[rec.testId] = 1;
+    }
+    if (Array.isArray(obj)) {
+      obj.forEach(add);
+    } else if (obj && typeof obj === 'object') {
+      Object.keys(obj).forEach(function (k) {
+        var v = obj[k], js = v && v.json;
+        if (!Array.isArray(js)) return;
+        js.forEach(function (r) {
+          if (r && /\/api\/run\/\d+\/?$/.test(r.url || '') && Array.isArray(r.data)) r.data.forEach(add);
+        });
+      });
+    }
+    var groups = Object.keys(m);
+    if (!groups.length) throw new Error('Não encontrei resultados por grupo neste ficheiro. Usa o li3_dump.json gerado pelo script de scrape.');
+    var out = {};
+    groups.forEach(function (g) {
+      out[g] = Object.keys(m[g]).map(function (id) { return m[g][id]; }).sort(function (a, b) { return a.id - b.id; });
+    });
+    return { data: out, nTests: Object.keys(tests).length };
+  }
+  function indexData() {
+    maps = {};
+    var per = {};
+    Object.keys(data).forEach(function (g) {
+      maps[g] = {};
+      data[g].forEach(function (r) {
+        maps[g][r.id] = r;
+        var p = per[r.id] || (per[r.id] = { c: { ok: 0, wrong: 0, noexec: 0, nocompile: 0 }, n: 0, q: 0 });
+        p.c[classify(r)]++; p.n++; p.q += qpct(r);
+      });
+    });
+    var ids = Object.keys(per).map(Number).sort(function (a, b) { return a - b; });
+    agg = { ids: ids, per: per };
+  }
+
+  /* ---------- Formatação ---------- */
+  function fmt(n, d) {
+    if (n === null || n === undefined || isNaN(n)) return '–';
+    return Number(n).toLocaleString('pt-PT', { minimumFractionDigits: 0, maximumFractionDigits: d === undefined ? 1 : d });
+  }
+  function pct(a, b) { return b ? Math.round(100 * a / b) : 0; }
+  function isNil(v) { return v === null || v === undefined; }
+  function countsOf(rows) {
+    var c = { ok: 0, wrong: 0, noexec: 0, nocompile: 0 };
+    rows.forEach(function (r) { c[classify(r)]++; });
+    return c;
+  }
+  function statCards(c, n) {
+    return STATES.map(function (s) {
+      return '<div class="stat"><span class="sw sw-' + s.id + '"></span><div class="stat-n">' + c[s.id] + '<small>' + pct(c[s.id], n) + '%</small></div><div class="stat-l">' + s.label + '</div></div>';
+    }).join('');
+  }
+  function queriesText(r) {
+    if (!r.cq.length) return '–';
+    return r.cq.map(function (v, i) { return 'Q' + (i + 1) + ' ' + v + '/' + (v + (+r.wq[i] || 0)); }).join(' · ');
+  }
+
+  /* ---------- Geometria e desenho partilhados ---------- */
+  function niceTicks(max, want) {
+    if (!(max > 0)) return [0, 1];
+    var raw = max / want, p = Math.pow(10, Math.floor(Math.log10(raw))), f = raw / p;
+    var step = (f <= 1 ? 1 : f <= 2 ? 2 : f <= 5 ? 5 : 10) * p, out = [];
+    for (var v = 0; v <= max + step * 0.999; v += step) { out.push(+v.toFixed(6)); if (v >= max) break; }
+    return out;
+  }
+  function barPath(x, y, w, h, r) {
+    r = Math.min(r, w / 2, h);
+    if (r <= 0.5) return 'M' + x + ',' + (y + h) + 'h' + w + 'v' + (-h) + 'h' + (-w) + 'z';
+    return 'M' + x + ',' + (y + h) + 'V' + (y + r) + 'a' + r + ',' + r + ' 0 0 1 ' + r + ',' + (-r) + 'h' + (w - 2 * r) + 'a' + r + ',' + r + ' 0 0 1 ' + r + ',' + r + 'V' + (y + h) + 'z';
+  }
+  function base(box, minId, maxId) {
+    var W = Math.max(300, Math.floor(box.clientWidth)), small = W < 560;
+    var ml = small ? 36 : 50, mr = small ? 6 : 12;
+    var nslots = maxId - minId + 1, plotW = W - ml - mr, slot = plotW / nslots;
+    var gap = slot >= 5 ? 1 : slot >= 3 ? 0.6 : 0;
+    return {
+      W: W, small: small, ml: ml, mr: mr, minId: minId, maxId: maxId, nslots: nslots, plotW: plotW, slot: slot,
+      gap: gap, cw: Math.max(0.5, slot - gap),
+      xOf: function (id) { return ml + (id - minId) * slot; }
+    };
+  }
+  function defs() {
+    return '<defs>' +
+      '<pattern id="p45" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="rgba(0,0,0,0.38)" stroke-width="1.6"/></pattern>' +
+      '<pattern id="p135" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(135)"><line x1="0" y1="0" x2="0" y2="6" stroke="rgba(0,0,0,0.38)" stroke-width="1.6"/></pattern>' +
+      '</defs>';
+  }
+  function texRects(c, x, y, w, h) {
+    var s = '';
+    if (c === 'wrong' || c === 'nocompile') s += '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="url(#p45)"/>';
+    if (c === 'noexec' || c === 'nocompile') s += '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="url(#p135)"/>';
+    return s;
+  }
+  function stripSVG(g, rows, y0, h, tex) {
+    var s = '', cls = rows.map(classify), i;
+    rows.forEach(function (r, i) {
+      var x = g.xOf(r.id).toFixed(2), w = g.cw.toFixed(2);
+      s += '<rect class="s-' + cls[i] + '" x="' + x + '" y="' + y0 + '" width="' + w + '" height="' + h + '"/>';
+      if (tex) s += texRects(cls[i], x, y0, w, h);
+    });
+    var st = 0;
+    for (i = 1; i <= rows.length; i++) {
+      var contiguous = i < rows.length && cls[i] === cls[st] && rows[i].id === rows[i - 1].id + 1;
+      if (contiguous) continue;
+      var a = rows[st].id, b = rows[i - 1].id, n = i - st, c = cls[st];
+      var px = n * g.slot, cx = g.ml + ((a - g.minId) + n / 2) * g.slot;
+      var full = SBY[c].label, sh = SBY[c].short, range = n === 1 ? String(a) : a + '–' + b;
+      var l1 = full.length * 6.4 + 12 <= px ? full : sh.length * 6.4 + 12 <= px ? sh : '';
+      if (h >= 40 && l1) {
+        s += '<text class="run-t run-' + c + '" x="' + cx.toFixed(1) + '" y="' + (y0 + h / 2 - 3) + '">' + l1 + '</text>';
+        s += '<text class="run-t run-' + c + '" x="' + cx.toFixed(1) + '" y="' + (y0 + h / 2 + 13) + '">' + range + ' (' + n + ')</text>';
+      } else if (h >= 40 && px >= 34) {
+        s += '<text class="run-t run-' + c + '" x="' + cx.toFixed(1) + '" y="' + (y0 + h / 2 + 4) + '">' + n + '</text>';
+      }
+      st = i;
+    }
+    return s;
+  }
+  function xAxisSVG(g, yBase, title) {
+    var maxTicks = Math.max(3, Math.floor(g.plotW / 44)), steps = [1, 2, 5, 10, 20, 25, 50, 100], step = 100, k, t, s = '';
+    for (k = 0; k < steps.length; k++) { if (g.nslots / steps[k] <= maxTicks) { step = steps[k]; break; } }
+    s += '<line class="axisl" x1="' + g.ml + '" x2="' + (g.W - g.mr) + '" y1="' + yBase + '" y2="' + yBase + '"/>';
+    for (t = Math.ceil(g.minId / step) * step; t <= g.maxId; t += step) {
+      var tx = g.xOf(t) + g.slot / 2;
+      s += '<line class="axisl" x1="' + tx.toFixed(1) + '" x2="' + tx.toFixed(1) + '" y1="' + yBase + '" y2="' + (yBase + 4) + '"/>';
+      s += '<text class="tick" x="' + tx.toFixed(1) + '" y="' + (yBase + 17) + '" text-anchor="middle">' + t + '</text>';
+    }
+    s += '<text class="cap" x="' + (g.ml + g.plotW / 2) + '" y="' + (yBase + 32) + '" text-anchor="middle">' + title + '</text>';
+    return s;
+  }
+  function hlSVG(g, sel, top, bottom) {
+    if (sel === null || sel < g.minId || sel > g.maxId) return '';
+    var x = g.xOf(sel), w = Math.max(g.slot, 2);
+    return '<rect class="hl" x="' + x.toFixed(2) + '" y="' + top + '" width="' + w.toFixed(2) + '" height="' + (bottom - top) + '"/>' +
+      '<line class="hlline" x1="' + (x + w / 2).toFixed(2) + '" x2="' + (x + w / 2).toFixed(2) + '" y1="' + top + '" y2="' + bottom + '"/>';
+  }
+
+  /* ---------- Gráfico interativo genérico ---------- */
+  function makeChart(prefix, draw, tipFn) {
+    var svg = $(prefix + 'Plot'), box = $(prefix + 'Chart'), tip = $(prefix + 'Tip');
+    var c = { sel: null, res: null };
+    function place() {
+      if (c.sel === null || !c.res) { tip.hidden = true; return; }
+      var html = tipFn(c.sel);
+      if (!html) { tip.hidden = true; return; }
+      tip.innerHTML = html; tip.hidden = false;
+      var g = c.res.g, cx = g.xOf(c.sel) + g.slot / 2, tw = tip.offsetWidth;
+      var left = cx + 14;
+      if (left + tw > g.W - 4) left = cx - 14 - tw;
+      if (left < 4) left = 4;
+      tip.style.left = left + 'px';
+      tip.style.top = (c.res.top + 4) + 'px';
+    }
+    c.render = function () {
+      if (!box.clientWidth) return;
+      var res = draw(box, c.sel);
+      if (!res) { svg.innerHTML = ''; c.res = null; tip.hidden = true; return; }
+      c.res = res;
+      svg.setAttribute('viewBox', '0 0 ' + res.g.W + ' ' + res.H);
+      svg.setAttribute('width', res.g.W); svg.setAttribute('height', res.H);
+      svg.innerHTML = res.html;
+      place();
+    };
+    c.reset = function () { c.sel = null; };
+    c.setSel = function (id) { c.sel = id; c.render(); if (c.onSel) c.onSel(id); };
+    function idAt(clientX) {
+      var g = c.res.g, b = svg.getBoundingClientRect();
+      var x = (clientX - b.left) * (g.W / (b.width || g.W));
+      if (x < g.ml || x > g.W - g.mr) return null;
+      return Math.max(g.minId, Math.min(g.maxId, g.minId + Math.floor((x - g.ml) / g.slot)));
+    }
+    svg.addEventListener('pointermove', function (e) { if (c.res) { var id = idAt(e.clientX); if (id !== c.sel) c.setSel(id); } });
+    svg.addEventListener('pointerdown', function (e) { if (c.res) { var id = idAt(e.clientX); if (id !== c.sel) c.setSel(id); } });
+    svg.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse' && c.sel !== null) c.setSel(null); });
+    svg.addEventListener('keydown', function (e) {
+      if (!c.res) return;
+      var ids = c.res.ids, i = c.sel === null ? -1 : ids.indexOf(c.sel);
+      if (e.key === 'ArrowRight') i = Math.min(ids.length - 1, i + 1);
+      else if (e.key === 'ArrowLeft') i = i < 0 ? 0 : Math.max(0, i - 1);
+      else if (e.key === 'Home') i = 0;
+      else if (e.key === 'End') i = ids.length - 1;
+      else if (e.key === 'Escape') { c.setSel(null); return; }
+      else return;
+      e.preventDefault();
+      c.setSel(ids[i]);
+    });
+    if (window.ResizeObserver) {
+      var last = 0;
+      new ResizeObserver(function () {
+        var w = box.clientWidth;
+        if (w && Math.abs(w - last) > 1) { last = w; c.render(); }
+      }).observe(box);
+    } else {
+      window.addEventListener('resize', c.render);
+    }
+    return c;
+  }
+
+  /* ---------- Página: Grupo ---------- */
+  function drawGroup(box, sel) {
+    var rows = data[current];
+    if (!rows || !rows.length) return null;
+    var tex = $('tex').checked;
+    var g = base(box, rows[0].id, rows[rows.length - 1].id);
+    var stripH = g.small ? 56 : 76, barsH = g.small ? 120 : 160;
+    var sY0 = 20, sY1 = sY0 + stripH, cap2 = sY1 + 28, bY0 = sY1 + 36, bY1 = bY0 + barsH, H = bY1 + 36;
+    var h = defs();
+    h += '<text class="cap" x="' + g.ml + '" y="12">Estado por teste</text>';
+    h += '<text class="cap" x="' + g.ml + '" y="' + cap2 + '">Tempo de execução (s)</text>';
+    h += stripSVG(g, rows, sY0, stripH, tex);
+
+    var cls = rows.map(classify);
+    var durs = rows.filter(function (r) { return !isNil(r.dur); });
+    var dmax = durs.reduce(function (m, r) { return Math.max(m, r.dur); }, 0);
+    var ticks = niceTicks(dmax, g.small ? 3 : 4), ymax = ticks[ticks.length - 1] || 1;
+    ticks.forEach(function (t) {
+      var y = bY1 - (t / ymax) * barsH;
+      if (t > 0) h += '<line class="gridl" x1="' + g.ml + '" x2="' + (g.W - g.mr) + '" y1="' + y.toFixed(1) + '" y2="' + y.toFixed(1) + '"/>';
+      h += '<text class="tick" x="' + (g.ml - 6) + '" y="' + (y + 4).toFixed(1) + '" text-anchor="end">' + fmt(t, 1) + '</text>';
+    });
+    if (!durs.length) h += '<text class="empty-bars" x="' + (g.ml + g.plotW / 2) + '" y="' + (bY0 + barsH / 2) + '" text-anchor="middle">Sem tempos registados neste grupo</text>';
+    rows.forEach(function (r, i) {
+      if (isNil(r.dur)) return;
+      var bh = Math.max(r.dur > 0 ? 1 : 0, (r.dur / ymax) * barsH), x = +g.xOf(r.id).toFixed(2), y = +(bY1 - bh).toFixed(2);
+      var d = barPath(x, y, +g.cw.toFixed(2), +bh.toFixed(2), 2);
+      h += '<path class="s-' + cls[i] + '" d="' + d + '"/>';
+      if (tex && cls[i] === 'wrong') h += '<path fill="url(#p45)" d="' + d + '"/>';
+      if (tex && cls[i] === 'noexec') h += '<path fill="url(#p135)" d="' + d + '"/>';
+    });
+    h += xAxisSVG(g, bY1, 'Teste');
+    h += hlSVG(g, sel, sY0, bY1);
+    return { html: h, H: H, g: g, top: sY0, ids: rows.map(function (r) { return r.id; }) };
+  }
+  function tipGroup(id) {
+    var r = maps[current] && maps[current][id];
+    if (!r) return '<div class="tip-h">Teste ' + id + '</div><div style="color:var(--ink-2)">Sem dados</div>';
+    var c = classify(r), flags = [];
+    if (r.timeout) flags.push('timeout');
+    if (r.oom) flags.push('sem memória');
+    return '<div class="tip-h">Teste ' + r.id + '</div><div class="tip-s"><span class="sw sw-' + c + '"></span>' + SBY[c].label + '</div><dl>' +
+      '<dt>Queries</dt><dd>' + queriesText(r) + '</dd>' +
+      '<dt>Validação</dt><dd>' + (isNil(r.val) ? '–' : fmt(r.val, 0) + '%') + '</dd>' +
+      '<dt>Tempo</dt><dd>' + (isNil(r.dur) ? '–' : fmt(r.dur, 1) + ' s') + '</dd>' +
+      '<dt>Memória</dt><dd>' + (isNil(r.mem) ? '–' : fmt(r.mem, 0) + ' MB') + '</dd>' +
+      '<dt>Fugas</dt><dd>' + (isNil(r.leaks) ? '–' : fmt(r.leaks, 3) + ' MB') + '</dd>' +
+      (flags.length ? '<dt>Limite</dt><dd>' + flags.join(', ') + '</dd>' : '') + '</dl>';
+  }
+  function renderGroupPage() {
+    var rows = data[current], c = countsOf(rows), n = rows.length, ran = c.ok + c.wrong;
+    $('gHeadline').innerHTML = '<b>' + current + '</b> executou em <b>' + ran + ' de ' + n + '</b> testes (' + pct(ran, n) + '%) e acertou em todas as queries em <b>' + c.ok + '</b>.';
+    $('gStats').innerHTML = statCards(c, n);
+    var ids = rows.map(function (r) { return r.id; }), min = ids[0], max = ids[ids.length - 1], have = {}, miss = [], i;
+    ids.forEach(function (x) { have[x] = 1; });
+    for (i = min; i <= max; i++) if (!have[i]) miss.push(i);
+    var t = 'Testes ' + min + ' a ' + max + ' (' + n + ' com dados).';
+    if (miss.length) t += ' Sem dados nos testes ' + (miss.length > 12 ? miss.slice(0, 12).join(', ') + ' e outros' : miss.join(', ')) + '.';
+    t += ' "Executou" significa que o programa terminou dentro dos limites de tempo e memória.';
+    $('gFoot').textContent = t;
+    var head = '<thead><tr><th>Teste</th><th class="l">Estado</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Valid. %</th><th>Tempo (s)</th><th>Mem. (MB)</th><th>Fugas (MB)</th></tr></thead>';
+    var body = rows.map(function (r) {
+      var cl = classify(r);
+      var q = [0, 1, 2].map(function (k) { return r.cq[k] === undefined ? '<td>–</td>' : '<td>' + r.cq[k] + '/' + (r.cq[k] + (+r.wq[k] || 0)) + '</td>'; }).join('');
+      return '<tr data-id="' + r.id + '"><td>' + r.id + '</td><td class="state l"><span class="sw sw-' + cl + '"></span>' + SBY[cl].label + '</td>' + q +
+        '<td>' + fmt(r.val, 0) + '</td><td>' + fmt(r.dur, 1) + '</td><td>' + fmt(r.mem, 0) + '</td><td>' + fmt(r.leaks, 3) + '</td></tr>';
+    }).join('');
+    $('gTbl').innerHTML = head + '<tbody>' + body + '</tbody>';
+    gChart.render();
+  }
+
+  /* ---------- Página: Comparar ---------- */
+  function score(r) { return SRANK[classify(r)] * 1000 + sum(r.cq); }
+  function cmpData() {
+    var A = data[current], B = data[currentB];
+    if (!A || !B || !A.length || !B.length) return null;
+    var minId = Math.min(A[0].id, B[0].id), maxId = Math.max(A[A.length - 1].id, B[B.length - 1].id);
+    var a = 0, b = 0, t = 0, both = 0, ids = {};
+    A.forEach(function (r) { ids[r.id] = 1; });
+    B.forEach(function (r) { ids[r.id] = 1; });
+    Object.keys(ids).forEach(function (k) {
+      var ra = maps[current][k], rb = maps[currentB][k];
+      if (!ra || !rb) return;
+      both++;
+      var sa = score(ra), sb = score(rb);
+      if (sa > sb) a++; else if (sb > sa) b++; else t++;
+    });
+    return { A: A, B: B, minId: minId, maxId: maxId, a: a, b: b, t: t, both: both, ids: Object.keys(ids).map(Number).sort(function (x, y) { return x - y; }) };
+  }
+  function drawCompare(box, sel) {
+    var d = cmpData();
+    if (!d) return null;
+    var tex = $('tex').checked, g = base(box, d.minId, d.maxId);
+    var sh = g.small ? 40 : 52, dh = 14;
+    var capA = 12, sA0 = 20, sA1 = sA0 + sh, capB = sA1 + 22, sB0 = sA1 + 28, sB1 = sB0 + sh;
+    var capD = sB1 + 22, sD0 = sB1 + 28, sD1 = sD0 + dh, H = sD1 + 36;
+    var h = defs();
+    h += '<text class="cap" x="' + g.ml + '" y="' + capA + '">' + current + '</text>';
+    h += stripSVG(g, d.A, sA0, sh, tex);
+    h += '<text class="cap" x="' + g.ml + '" y="' + capB + '">' + currentB + '</text>';
+    h += stripSVG(g, d.B, sB0, sh, tex);
+    h += '<text class="cap" x="' + g.ml + '" y="' + capD + '">Quem está à frente</text>';
+    d.ids.forEach(function (id) {
+      var ra = maps[current][id], rb = maps[currentB][id];
+      if (!ra || !rb) return;
+      var sa = score(ra), sb = score(rb), k = sa > sb ? 'd-a' : sb > sa ? 'd-b' : 'd-tie';
+      h += '<rect class="' + k + '" x="' + g.xOf(id).toFixed(2) + '" y="' + sD0 + '" width="' + g.cw.toFixed(2) + '" height="' + dh + '"/>';
+    });
+    h += xAxisSVG(g, sD1, 'Teste');
+    h += hlSVG(g, sel, sA0, sD1);
+    return { html: h, H: H, g: g, top: sA0, ids: d.ids };
+  }
+  function tipCompare(id) {
+    function block(name, r) {
+      if (!r) return '<div class="tip-s"><b style="color:var(--ink)">' + name + '</b>&nbsp;sem dados</div>';
+      var c = classify(r);
+      return '<div class="tip-s"><span class="sw sw-' + c + '"></span><b style="color:var(--ink)">' + name + '</b>&nbsp;' + SBY[c].label + '</div>' +
+        '<dl><dt>Queries</dt><dd>' + queriesText(r) + '</dd><dt>Tempo</dt><dd>' + (isNil(r.dur) ? '–' : fmt(r.dur, 1) + ' s') + '</dd></dl>';
+    }
+    return '<div class="tip-h">Teste ' + id + '</div>' + block(current, maps[current][id]) + '<hr>' + block(currentB, maps[currentB][id]);
+  }
+  function renderComparePage() {
+    var d = cmpData();
+    if (!d) { $('cHeadline').textContent = 'Escolhe dois grupos com dados.'; cChart.render(); return; }
+    $('cHeadline').innerHTML = '<b>' + current + '</b> está à frente em <b>' + d.a + '</b> testes, <b>' + currentB + '</b> em <b>' + d.b + '</b>, e empatam em <b>' + d.t + '</b> (' + d.both + ' testes com dados nos dois).';
+    $('cLegend').innerHTML = '<span class="i"><span class="sw sw-a"></span>' + current + ' à frente</span><span class="i"><span class="sw sw-b"></span>' + currentB + ' à frente</span><span class="i"><span class="sw sw-tie"></span>Empate</span>';
+    var ca = countsOf(d.A), cb = countsOf(d.B);
+    $('cTbl').innerHTML = '<thead><tr><th class="l">Estado</th><th>' + current + '</th><th>' + currentB + '</th></tr></thead><tbody>' +
+      STATES.map(function (s) {
+        return '<tr><td><span class="sw sw-' + s.id + '"></span>' + s.label + '</td><td>' + ca[s.id] + ' <span style="color:var(--muted)">(' + pct(ca[s.id], d.A.length) + '%)</span></td><td>' + cb[s.id] + ' <span style="color:var(--muted)">(' + pct(cb[s.id], d.B.length) + '%)</span></td></tr>';
+      }).join('') + '</tbody>';
+    cChart.render();
+  }
+
+  /* ---------- Página: Turma ---------- */
+  function drawTurma(box, sel) {
+    var ids = agg.ids;
+    if (!ids.length) return null;
+    var tex = $('tex').checked, g = base(box, ids[0], ids[ids.length - 1]);
+    var hA = g.small ? 120 : 150, hB = g.small ? 90 : 110;
+    var aY0 = 20, aY1 = aY0 + hA, cap2 = aY1 + 28, bY0 = aY1 + 36, bY1 = bY0 + hB, H = bY1 + 36;
+    var h = defs(), order = ['ok', 'wrong', 'noexec', 'nocompile'];
+    h += '<text class="cap" x="' + g.ml + '" y="12">Grupos por estado (%)</text>';
+    h += '<text class="cap" x="' + g.ml + '" y="' + cap2 + '">Queries certas, média de todos os grupos (%)</text>';
+    [0, 25, 50, 75, 100].forEach(function (t) {
+      var y = aY1 - t / 100 * hA;
+      if (t > 0) h += '<line class="gridl" x1="' + g.ml + '" x2="' + (g.W - g.mr) + '" y1="' + y.toFixed(1) + '" y2="' + y.toFixed(1) + '"/>';
+      h += '<text class="tick" x="' + (g.ml - 6) + '" y="' + (y + 4).toFixed(1) + '" text-anchor="end">' + t + '</text>';
+    });
+    ids.forEach(function (id) {
+      var p = agg.per[id], cum = 0;
+      order.forEach(function (k) {
+        var cnt = p.c[k];
+        if (!cnt) return;
+        var segH = cnt / p.n * hA, yTop = aY1 - (cum + cnt) / p.n * hA, gp = segH >= 3 ? 1 : 0;
+        var x = g.xOf(id).toFixed(2), w = g.cw.toFixed(2), yy = (yTop + gp).toFixed(2), hh = Math.max(0.5, segH - gp).toFixed(2);
+        h += '<rect class="s-' + k + '" x="' + x + '" y="' + yy + '" width="' + w + '" height="' + hh + '"/>';
+        if (tex) h += texRects(k, x, yy, w, hh);
+        cum += cnt;
+      });
+    });
+    h += '<line class="axisl" x1="' + g.ml + '" x2="' + (g.W - g.mr) + '" y1="' + aY1 + '" y2="' + aY1 + '"/>';
+    [0, 50, 100].forEach(function (t) {
+      var y = bY1 - t / 100 * hB;
+      if (t > 0) h += '<line class="gridl" x1="' + g.ml + '" x2="' + (g.W - g.mr) + '" y1="' + y.toFixed(1) + '" y2="' + y.toFixed(1) + '"/>';
+      h += '<text class="tick" x="' + (g.ml - 6) + '" y="' + (y + 4).toFixed(1) + '" text-anchor="end">' + t + '</text>';
+    });
+    var pts = ids.map(function (id) { var p = agg.per[id]; return (g.xOf(id) + g.slot / 2).toFixed(1) + ',' + (bY1 - (p.q / p.n) / 100 * hB).toFixed(1); });
+    h += '<polyline class="lineS" points="' + pts.join(' ') + '"/>';
+    h += xAxisSVG(g, bY1, 'Teste');
+    h += hlSVG(g, sel, aY0, bY1);
+    if (sel !== null && agg.per[sel]) {
+      var ps = agg.per[sel];
+      h += '<circle class="dot" cx="' + (g.xOf(sel) + g.slot / 2).toFixed(1) + '" cy="' + (bY1 - (ps.q / ps.n) / 100 * hB).toFixed(1) + '" r="4.5"/>';
+    }
+    return { html: h, H: H, g: g, top: aY0, ids: ids };
+  }
+  function tipTurma(id) {
+    var p = agg.per[id];
+    if (!p) return '<div class="tip-h">Teste ' + id + '</div><div style="color:var(--ink-2)">Sem dados</div>';
+    return '<div class="tip-h">Teste ' + id + '</div><div class="tip-s">' + p.n + ' grupos</div><dl>' +
+      STATES.map(function (s) { return '<dt><span class="sw sw-' + s.id + '" style="margin-right:6px"></span>' + s.short + '</dt><dd>' + p.c[s.id] + ' (' + pct(p.c[s.id], p.n) + '%)</dd>'; }).join('') +
+      '<dt>Queries certas</dt><dd>' + fmt(p.q / p.n, 0) + '%</dd></dl>';
+  }
+  function renderTurmaPage() {
+    var ids = agg.ids;
+    if (!ids.length) return;
+    var last = ids[ids.length - 1], p = agg.per[last];
+    $('tHeadline').innerHTML = 'No teste <b>' + last + '</b>, <b>' + p.c.ok + ' de ' + p.n + '</b> grupos acertaram em todas as queries e <b>' + (p.c.ok + p.c.wrong) + '</b> executaram.';
+    $('tStats').innerHTML = statCards(p.c, p.n);
+    tChart.render();
+  }
+
+  /* ---------- Página: Ranking ---------- */
+  function rankVal(o, k) {
+    switch (k) {
+      case 'g': return o.g;
+      case 'state': return SRANK[o.s];
+      case 'q': return o.q;
+      case 'val': return o.r.val;
+      case 'dur': return o.r.executed ? o.r.dur : null;
+      case 'mem': return o.r.executed ? o.r.mem : null;
+      case 'leaks': return o.r.leaks;
+    }
+    return null;
+  }
+  function rankRows() {
+    var T = +$('testSel').value || agg.ids[agg.ids.length - 1], only = $('onlyRan').checked, out = [];
+    Object.keys(data).forEach(function (g) {
+      var r = maps[g][T];
+      if (!r || (only && !r.executed)) return;
+      out.push({ g: g, r: r, s: classify(r), q: qpct(r) });
+    });
+    out.sort(function (a, b) {
+      var k = rankSort.key, d = rankSort.dir, va = rankVal(a, k), vb = rankVal(b, k), na = isNil(va), nb = isNil(vb);
+      if (na !== nb) return na ? 1 : -1;
+      if (!na && va !== vb) return (va < vb ? -1 : 1) * d;
+      if (a.q !== b.q) return b.q - a.q;
+      var da = a.r.executed ? a.r.dur : null, db = b.r.executed ? b.r.dur : null;
+      if (isNil(da) !== isNil(db)) return isNil(da) ? 1 : -1;
+      if (!isNil(da) && da !== db) return da - db;
+      return a.g < b.g ? -1 : 1;
+    });
+    return { T: T, rows: out };
+  }
+  function renderRankingPage() {
+    var res = rankRows(), rows = res.rows, T = res.T;
+    var all = 0, ran = 0, ok = 0;
+    Object.keys(data).forEach(function (g) {
+      var r = maps[g][T];
+      if (!r) return;
+      all++; if (r.executed && r.compiled) ran++; if (classify(r) === 'ok') ok++;
+    });
+    $('rHeadline').innerHTML = 'Teste <b>' + T + '</b>: <b>' + ran + ' de ' + all + '</b> grupos executaram e <b>' + ok + '</b> acertaram em todas as queries.';
+    var cols = [['g', 'Grupo', 'l'], ['state', 'Estado', 'l'], ['q', 'Queries %', ''], ['q1', 'Q1'], ['q2', 'Q2'], ['q3', 'Q3'], ['val', 'Valid. %', ''], ['dur', 'Tempo (s)', ''], ['mem', 'Mem. (MB)', ''], ['leaks', 'Fugas (MB)', '']];
+    var sortable = { g: 1, state: 1, q: 1, val: 1, dur: 1, mem: 1, leaks: 1 };
+    var head = '<thead><tr><th>#</th>' + cols.map(function (c) {
+      var cl = c[2] === 'l' ? ' class="l"' : '';
+      if (!sortable[c[0]]) return '<th' + cl + '>' + c[1] + '</th>';
+      var on = rankSort.key === c[0];
+      var arrow = on ? (rankSort.dir === 1 ? '▲' : '▼') : '▼';
+      return '<th' + cl + (on ? ' aria-sort="' + (rankSort.dir === 1 ? 'ascending' : 'descending') + '"' : '') + '><button type="button" class="sortbtn" data-k="' + c[0] + '">' + c[1] + '<span class="ar">' + arrow + '</span></button></th>';
+    }).join('') + '</tr></thead>';
+    var body = rows.map(function (o, i) {
+      var r = o.r, q = [0, 1, 2].map(function (k) { return r.cq[k] === undefined ? '<td>–</td>' : '<td>' + r.cq[k] + '/' + (r.cq[k] + (+r.wq[k] || 0)) + '</td>'; }).join('');
+      return '<tr' + (o.g === current ? ' class="sel"' : '') + '><td>' + (i + 1) + '</td><td class="l"><button type="button" class="gbtn" data-g="' + o.g + '">' + o.g + '</button></td>' +
+        '<td class="state l"><span class="sw sw-' + o.s + '"></span>' + SBY[o.s].short + '</td><td>' + fmt(o.q, 0) + '</td>' + q +
+        '<td>' + fmt(r.val, 0) + '</td><td>' + fmt(r.executed ? r.dur : null, 1) + '</td><td>' + fmt(r.executed ? r.mem : null, 0) + '</td><td>' + fmt(r.leaks, 3) + '</td></tr>';
+    }).join('');
+    $('rTbl').innerHTML = head + '<tbody>' + body + '</tbody>';
+  }
+
+  /* ---------- Controlo geral ---------- */
+  var gChart = makeChart('g', drawGroup, tipGroup);
+  var cChart = makeChart('c', drawCompare, tipCompare);
+  var tChart = makeChart('t', drawTurma, tipTurma);
+  gChart.onSel = function (id) {
+    var trs = $('gTbl').querySelectorAll('tbody tr');
+    for (var i = 0; i < trs.length; i++) trs[i].classList.toggle('sel', id !== null && +trs[i].getAttribute('data-id') === id);
+  };
+
+  function optionsFor(keys, sel) {
+    return keys.map(function (g) { return '<option value="' + g + '"' + (g === sel ? ' selected' : '') + '>' + g + '</option>'; }).join('');
+  }
+  function fillSelects() {
+    var keys = Object.keys(data).sort();
+    var want = null;
+    try { want = localStorage.getItem('li3.group'); } catch (e) {}
+    if (!want || !data[want]) want = data.G45 ? 'G45' : keys[0];
+    current = want;
+    var other = keys.filter(function (k) { return k !== current; });
+    currentB = data.G14 && current !== 'G14' ? 'G14' : (other[0] || current);
+    $('group').innerHTML = optionsFor(keys, current);
+    $('groupB').innerHTML = optionsFor(keys, currentB);
+    var ids = agg.ids.slice().reverse();
+    $('testSel').innerHTML = ids.map(function (i, k) { return '<option value="' + i + '"' + (k === 0 ? ' selected' : '') + '>' + i + '</option>'; }).join('');
+  }
+
+  function show(p) {
+    page = p;
+    PAGES.forEach(function (x) { $('page-' + x).hidden = x !== p; });
+    var links = document.querySelectorAll('.nav a');
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].getAttribute('data-p') === p) links[i].setAttribute('aria-current', 'page'); else links[i].removeAttribute('aria-current');
+    }
+    ['fGroup', 'fGroupB', 'fTest', 'fOnly'].forEach(function (id) {
+      var e = $(id), on = (e.getAttribute('data-pages') || '').split(' ').indexOf(p) >= 0;
+      e.hidden = !on;
+    });
+    $('sampleNote').hidden = !(isSample && (p === 'turma' || p === 'ranking'));
+    $('page-turma').classList.toggle('tex', $('tex').checked);
+    document.body.classList.toggle('tex', $('tex').checked);
+    if (p === 'grupo') renderGroupPage();
+    else if (p === 'comparar') renderComparePage();
+    else if (p === 'turma') renderTurmaPage();
+    else if (p === 'ranking') renderRankingPage();
+  }
+  function route() {
+    var h = (window.location && window.location.hash || '').replace('#', '');
+    show(PAGES.indexOf(h) >= 0 ? h : 'grupo');
+  }
+  function goTo(p) {
+    try { window.location.hash = p; } catch (e) {}
+    show(p);
+  }
+
+  function setError(msg) { var e = $('err'); e.textContent = msg || ''; e.hidden = !msg; }
+
+  async function fetchAndLoad() {
+    setError('');
+    $('dropTitle').textContent = 'A carregar li3_dump.json…';
+    $('dropSub').textContent = 'Pode demorar alguns segundos.';
+    $('fetchBtn').disabled = true;
+    try {
+      // Try Cache API first, then network
+      var cached = null;
+      try {
+        var cache = await caches.open('li3-data-v1');
+        var cachedResp = await cache.match('li3_dump.json');
+        if (cachedResp) cached = await cachedResp.text();
+      } catch (e) {}
+
+      var text;
+      if (cached) {
+        text = cached;
+      } else {
+        var resp = await fetch('li3_dump.json');
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        text = await resp.text();
+        // Store in Cache API for offline use
+        try {
+          var cache2 = await caches.open('li3-data-v1');
+          await cache2.put('li3_dump.json', new Response(text, { headers: { 'Content-Type': 'application/json' } }));
+        } catch (e) {}
+      }
+
+      var res = parseDump(JSON.parse(text));
+      data = res.data; isSample = false;
+      indexData();
+      $('sampleTag').hidden = true;
+      fillSelects();
+      gChart.reset(); cChart.reset(); tChart.reset();
+      $('dropTitle').textContent = 'li3_dump.json';
+      $('dropSub').textContent = res.nTests + ' testes · ' + Object.keys(data).length + ' grupos. Clica novamente para actualizar.';
+      $('fetchBtn').textContent = 'Actualizar dados';
+      $('fetchBtn').disabled = false;
+      show(page);
+    } catch (e) {
+      $('dropTitle').textContent = 'Erro ao carregar';
+      $('dropSub').textContent = 'Clica para tentar novamente.';
+      $('fetchBtn').disabled = false;
+      setError(e instanceof SyntaxError ? 'O ficheiro não é um JSON válido.' : e.message);
+    }
+  }
+
+  function init() {
+    data = sampleData();
+    indexData();
+    $('sampleTag').hidden = false;
+    fillSelects();
+
+    $('group').addEventListener('change', function (e) {
+      current = e.target.value;
+      try { localStorage.setItem('li3.group', current); } catch (x) {}
+      gChart.reset(); cChart.reset();
+      show(page);
+    });
+    $('groupB').addEventListener('change', function (e) { currentB = e.target.value; cChart.reset(); show(page); });
+    $('testSel').addEventListener('change', function () { show(page); });
+    $('onlyRan').addEventListener('change', function () { show(page); });
+    $('tex').addEventListener('change', function () { show(page); });
+
+    $('file').addEventListener('change', function (e) {
+      var f = e.target.files && e.target.files[0];
+      if (f) loadFile(f);
+      e.target.value = '';
+    });
+    var dz = $('drop');
+    ['dragenter', 'dragover'].forEach(function (ev) { dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.add('over'); }); });
+    ['dragleave', 'drop'].forEach(function (ev) { dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.remove('over'); }); });
+    dz.addEventListener('drop', function (e) {
+      var f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+      if (f) loadFile(f);
+    });
+    window.addEventListener('dragover', function (e) { e.preventDefault(); });
+    window.addEventListener('drop', function (e) { e.preventDefault(); });
+
+    $('gTblBtn').addEventListener('click', function () {
+      var w = $('gTblWrap'), open = w.hidden;
+      w.hidden = !open;
+      this.setAttribute('aria-expanded', open ? 'true' : 'false');
+      this.textContent = open ? 'Esconder tabela' : 'Ver tabela';
+    });
+
+    $('rTbl').addEventListener('click', function (e) {
+      var t = e.target;
+      while (t && t !== this && !(t.getAttribute && (t.getAttribute('data-k') || t.getAttribute('data-g')))) t = t.parentNode;
+      if (!t || t === this) return;
+      var k = t.getAttribute('data-k'), g = t.getAttribute('data-g');
+      if (k) {
+        if (rankSort.key === k) rankSort.dir = -rankSort.dir;
+        else rankSort = { key: k, dir: (k === 'g' || k === 'dur' || k === 'mem' || k === 'leaks') ? 1 : -1 };
+        renderRankingPage();
+      } else if (g) {
+        current = g; $('group').value = g;
+        try { localStorage.setItem('li3.group', g); } catch (x) {}
+        gChart.reset();
+        goTo('grupo');
+      }
+    });
+
+    window.addEventListener('hashchange', route);
+    route();
+  }
+  init();
+})();
+</script>
+<script>
+document.getElementById('fetchBtn').addEventListener('click', async () => {
+  const url = 'li3_dump.json';
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const text = await response.text();
+    const dataObj = JSON.parse(text);
+    const res = parseDump(dataObj);
+    data = res.data;
+    isSample = false;
+    indexData();
+    document.getElementById('sampleTag').hidden = true;
+    fillSelects();
+    gChart.reset(); cChart.reset(); tChart.reset();
+    document.getElementById('dropTitle').textContent = url;
+    document.getElementById('dropSub').textContent = `${res.nTests} testes · ${Object.keys(data).length} grupos.`;
+    show(page);
+  } catch (e) {
+    console.error('Fetch failed:', e);
+    alert('Could not fetch the file – see console for details.');
+  }
+});
+</script>
+
+
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .catch(err => console.error('SW registration failed:', err));
+}
+</script>
+
+</body></html>
