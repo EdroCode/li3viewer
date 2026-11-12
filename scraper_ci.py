@@ -1,20 +1,22 @@
 """Incremental headless scraper for GitHub Actions.
 
-- First run (no li3_dump.json): fetches tests 1..INITIAL_MAX.
-- Later runs: loads the existing dump, fetches only tests that are missing
-  or failed last time, re-checks the newest REFRESH_LAST tests, and then
-  probes upward for new tests until MISS_LIMIT consecutive misses.
+- Sweeps tests 1..INITIAL_MAX, skipping tests already in li3_dump.json
+  (failed ones and the newest REFRESH_LAST tests are fetched again).
+- Then keeps probing upward until a test is missing: HTTP 404/4xx/5xx,
+  a blank page, a "not found" page, or a request failure.
 """
 import json
 import os
+import re
 import sys
 from playwright.sync_api import sync_playwright
 
 BASE = "https://li3.di.uminho.pt/test/{}"
 OUT = "li3_dump.json"
-INITIAL_MAX = 128   # full sweep range used on the first run
-MISS_LIMIT = 3      # stop probing upward after this many consecutive missing tests
-REFRESH_LAST = 2    # re-fetch the newest N completed tests (they may still change)
+INITIAL_MAX = 128   # sweep range (tests 1..128 are always checked)
+REFRESH_LAST = 5    # re-fetch the newest N completed tests on every run
+MAX_TEST = 5000     # safety cap for the upward probe
+NOT_FOUND = re.compile(r"\b(404|not found|não encontrad[ao])\b", re.I)
 
 
 def load_existing():
@@ -25,7 +27,7 @@ def load_existing():
 
 
 def is_done(rec):
-    return rec is not None and "error" not in rec and bool(rec.get("text"))
+    return rec is not None and "error" not in rec and bool(rec.get("text", "").strip())
 
 
 def fetch(page, n):
@@ -45,7 +47,10 @@ def fetch(page, n):
         page.wait_for_timeout(1000)
         if r is None or r.status >= 400:
             return "missing", None
-        return "ok", {"text": page.inner_text("body"), "json": list(captured)}
+        text = page.inner_text("body").strip()
+        if not text or (len(text) < 300 and NOT_FOUND.search(text)):
+            return "missing", None
+        return "ok", {"text": text, "json": list(captured)}
     except Exception as e:
         return "error", {"error": str(e)}
     finally:
@@ -56,11 +61,9 @@ existing = load_existing()
 out = dict(existing)
 
 done = {n for n, rec in existing.items() if is_done(rec)}
-completed = sorted(done)
-refresh = set(completed[-REFRESH_LAST:]) if REFRESH_LAST else set()
-
+refresh = set(sorted(done)[-REFRESH_LAST:]) if REFRESH_LAST else set()
 todo = [n for n in range(1, INITIAL_MAX + 1) if n not in done or n in refresh]
-print(f"Already have {len(done)} tests; fetching {len(todo)} in the sweep.")
+print(f"Have {len(done)} good tests; sweeping {len(todo)} of 1..{INITIAL_MAX}.")
 
 errors = 0
 attempted = 0
@@ -70,32 +73,33 @@ with sync_playwright() as p:
     page = browser.new_page()
 
     def scrape(n):
+        """Returns 'ok', 'error' or 'missing'. Keeps old data when a test is missing."""
         global errors, attempted
         attempted += 1
         status, rec = fetch(page, n)
         if status == "missing":
-            out.pop(n, None)
-        else:
-            out[n] = rec
-            if status == "error":
-                errors += 1
+            print(f"/test/{n}: missing")
+            return status
+        out[n] = rec
+        if status == "error":
+            errors += 1
         print(f"/test/{n}: {status}")
         return status
 
     for n in todo:
         scrape(n)
 
-    # Probe for tests beyond the known range.
+    # Probe upward until the first missing (or failed) test.
     n = max(INITIAL_MAX, max(out, default=0)) + 1
-    misses = 0
-    while misses < MISS_LIMIT:
-        status = scrape(n)
-        misses = misses + 1 if status == "missing" else 0
+    while n <= MAX_TEST:
+        if scrape(n) != "ok":
+            break
         n += 1
+    print(f"Probe stopped at /test/{n}.")
 
     browser.close()
 
-# Most fetches failing usually means the site is down or blocked: keep the old dump.
+# If most requests failed, the site is probably down or blocking us: keep the old dump.
 if attempted and errors > attempted // 2:
     print("Too many errors; not overwriting the existing dump.")
     sys.exit(1)
