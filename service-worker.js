@@ -1,31 +1,37 @@
+// Network-first: always try the server (so fresh li3_dump.json is used),
+// fall back to cache only when offline.
+const CACHE = 'li3-v2';
+const CORE = ['./', './web.html'];
+
 self.addEventListener('install', event => {
-  // Cache the core files during install
-  const core = [
-    '/',
-    'web.html',
-    'li3_dump.json', // example data file
-  ];
   event.waitUntil(
-    caches.open('core-v1').then(cache => cache.addAll(core))
+    caches.open(CACHE).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting())
+  );
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+      .then(() => self.clients.claim())
   );
 });
 
 self.addEventListener('fetch', event => {
-  // Use cache-first strategy for same-origin requests
-  const {request} = event;
+  const { request } = event;
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
-  // Only handle same-origin requests
   if (url.origin !== location.origin) return;
+
   event.respondWith(
-    caches.match(request).then(cached => {
-      if (cached) return cached;
-      return fetch(request).then(networkResponse => {
-        // Update cache for future use
-        const clone = networkResponse.clone();
-        caches.open('runtime').then(cache => cache.put(request, clone));
-        return networkResponse;
-      });
-    })
+    fetch(request, { cache: 'no-store' })
+      .then(res => {
+        if (res.ok) {
+          const copy = res.clone();
+          caches.open(CACHE).then(cache => cache.put(request, copy));
+        }
+        return res;
+      })
+      .catch(() => caches.match(request))
   );
 });
