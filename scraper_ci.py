@@ -1,21 +1,30 @@
 """Incremental headless scraper for GitHub Actions.
 
-- Sweeps tests 1..INITIAL_MAX, skipping tests already saved in li3_dump.json.
-  Failed tests and the newest REFRESH_LAST tests are fetched again.
-- Then probes upward. It stops after PROBE_MISSES consecutive tests that are
-  missing or failed, and logs why each one was rejected.
+The site is a single-page app: every /test/N URL returns the same static
+shell (same HTTP status, same bytes) and the real content is rendered by
+client-side JS afterwards. So HTTP status / "is it empty" checks can't tell
+a real test apart from a nonexistent one.
+
+Fix: fetch a test number far outside any plausible range once at the start
+and use whatever it renders as the "doesn't exist" baseline text. Any test
+whose rendered text matches that baseline is treated as missing.
 """
 import json
 import os
 import sys
+import time
 from playwright.sync_api import sync_playwright
 
 BASE = "https://li3.di.uminho.pt/test/{}"
 OUT = "li3_dump.json"
-INITIAL_MAX = 128   # always sweep tests 1..128
-REFRESH_LAST = 5    # re-fetch the newest N completed tests on every run
-PROBE_MISSES = 10   # stop probing after this many consecutive missing/failed tests
-MAX_TEST = 5000     # safety cap
+INITIAL_MAX = 128       # always sweep tests 1..128
+REFRESH_LAST = 5        # re-fetch the newest N completed tests on every run
+PROBE_MISSES = 10       # stop probing after this many consecutive missing/failed tests
+MAX_TEST = 2000         # safety cap
+BASELINE_TEST = 999999  # assumed to never exist; used to learn what "missing" looks like
+TIME_BUDGET_SEC = 40 * 60  # stop early (but still save) if a run runs this long
+
+start_time = time.time()
 
 
 def load_existing():
@@ -29,8 +38,12 @@ def is_done(rec):
     return rec is not None and "error" not in rec and bool(rec.get("text", "").strip())
 
 
-def fetch(page, n):
-    """Returns (status, record, reason). status: 'ok' | 'missing' | 'error'."""
+def normalize(text):
+    return " ".join(text.split())
+
+
+def render(page, n):
+    """Loads /test/n and returns (inner_text, json_captured) or raises."""
     captured = []
 
     def on_response(resp):
@@ -42,21 +55,13 @@ def fetch(page, n):
 
     page.on("response", on_response)
     try:
-        r = page.goto(BASE.format(n), wait_until="domcontentloaded", timeout=30000)
+        page.goto(BASE.format(n), wait_until="domcontentloaded", timeout=30000)
         try:
-            page.wait_for_load_state("networkidle", timeout=15000)
+            page.wait_for_load_state("networkidle", timeout=10000)
         except Exception:
-            pass  # slow background requests are fine; we still have the page
-        page.wait_for_timeout(1000)
-        status_code = r.status if r else None
-        if status_code is not None and status_code >= 400:
-            return "missing", None, f"HTTP {status_code}"
-        text = page.inner_text("body").strip()
-        if not text:
-            return "missing", None, "empty page"
-        return "ok", {"text": text, "json": list(captured)}, ""
-    except Exception as e:
-        return "error", {"error": str(e)}, str(e).splitlines()[0][:120]
+            pass
+        page.wait_for_timeout(800)
+        return page.inner_text("body").strip(), captured
     finally:
         page.remove_listener("response", on_response)
 
@@ -73,46 +78,76 @@ attempted = 0
 errors = 0
 
 
-with sync_playwright() as p:
-    browser = p.chromium.launch(headless=True)
-    page = browser.new_page()
+def time_left():
+    return time.time() - start_time < TIME_BUDGET_SEC
 
-    def scrape(n):
-        global attempted, errors
-        attempted += 1
-        status, rec, reason = fetch(page, n)
-        if status == "ok":
-            out[n] = rec
-        elif status == "error":
-            errors += 1
-            out[n] = rec
-        print(f"/test/{n}: {status}{' (' + reason + ')' if reason else ''}")
-        return status
 
-    for n in todo:
-        scrape(n)
+try:
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
 
-    # Probe upward. Keep going through isolated gaps; stop after PROBE_MISSES in a row.
-    n = max(INITIAL_MAX, max(out, default=0)) + 1
-    misses = 0
-    last_ok = max(out, default=0)
-    while n <= MAX_TEST and misses < PROBE_MISSES:
-        status = scrape(n)
-        if status == "ok":
+        # Learn what a nonexistent test looks like.
+        try:
+            baseline_text, _ = render(page, BASELINE_TEST)
+            baseline_norm = normalize(baseline_text)
+            print(f"Baseline (test {BASELINE_TEST}) captured, {len(baseline_norm)} chars.")
+        except Exception as e:
+            baseline_norm = None
+            print(f"Could not load baseline test: {e}. Falling back to 'empty page' only.")
+
+        def is_missing(text):
+            norm = normalize(text)
+            if not norm:
+                return True
+            if baseline_norm is not None and norm == baseline_norm:
+                return True
+            return False
+
+        def scrape(n):
+            global attempted, errors
+            attempted += 1
+            try:
+                text, captured = render(page, n)
+            except Exception as e:
+                errors += 1
+                out[n] = {"error": str(e)}
+                print(f"/test/{n}: error ({str(e).splitlines()[0][:120]})")
+                return "error"
+            if is_missing(text):
+                print(f"/test/{n}: missing")
+                return "missing"
+            out[n] = {"text": text, "json": captured}
+            print(f"/test/{n}: ok")
+            return "ok"
+
+        for n in todo:
+            if not time_left():
+                print("Time budget reached during sweep; stopping early.")
+                break
+            scrape(n)
+
+        # Probe upward for new tests.
+        if time_left():
+            n = max(INITIAL_MAX, max(out, default=0)) + 1
             misses = 0
-            last_ok = n
-        else:
-            misses += 1
-        n += 1
-    print(f"Probe stopped at /test/{n - 1}; last good test: {last_ok}.")
+            last_ok = max(out, default=0)
+            while n <= MAX_TEST and misses < PROBE_MISSES and time_left():
+                status = scrape(n)
+                if status == "ok":
+                    misses = 0
+                    last_ok = n
+                else:
+                    misses += 1
+                n += 1
+            print(f"Probe stopped at /test/{n - 1}; last good test: {last_ok}.")
 
-    browser.close()
-
-# If most requests failed, the site is probably down or blocking us: keep the old dump.
-if attempted and errors > attempted // 2:
-    print("Too many errors; not overwriting the existing dump.")
-    sys.exit(1)
-
-with open(OUT, "w", encoding="utf-8") as f:
-    json.dump(dict(sorted(out.items())), f, ensure_ascii=False, indent=2)
-print(f"Saved {OUT} with {len(out)} tests.")
+        browser.close()
+finally:
+    # Always save whatever was gathered, even if something above raised or ran out of time.
+    if attempted and errors > attempted // 2:
+        print("Too many errors; not overwriting the existing dump.")
+        sys.exit(1)
+    with open(OUT, "w", encoding="utf-8") as f:
+        json.dump(dict(sorted(out.items())), f, ensure_ascii=False, indent=2)
+    print(f"Saved {OUT} with {len(out)} tests.")
