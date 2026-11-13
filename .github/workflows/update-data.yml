@@ -2,7 +2,7 @@ name: Update li3 data
 
 on:
   schedule:
-    - cron: "0 */135 * * * *" # daily 00:00 UTC with an safety gap
+    - cron: "0 */3 * * *" # daily 00:00 UTC with an safety gap
   workflow_dispatch:       # manual "Run workflow" button
 
 permissions:
