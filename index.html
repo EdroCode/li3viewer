@@ -166,6 +166,18 @@ select:focus-visible, button:focus-visible, .check input:focus-visible, svg.plot
 .legend span.i { display: inline-flex; align-items: center; gap: 7px; }
 .legend .sw { margin-top: 0; }
 
+/* Estatísticas detalhadas */
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 10px; }
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; min-width: 0; }
+.kpi-n { font-family: var(--font-data); font-size: 19px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.kpi-l { font-size: 12.5px; color: var(--ink-2); margin-top: 3px; line-height: 1.3; }
+.qbars { display: grid; gap: 8px; margin-top: 8px; max-width: 420px; }
+.qbar-row { display: grid; grid-template-columns: 26px 1fr 44px; align-items: center; gap: 10px; font-size: 13px; }
+.qbar-name { color: var(--ink-2); }
+.qbar-track { height: 8px; background: var(--grid); border-radius: 999px; overflow: hidden; }
+.qbar-fill { display: block; height: 100%; background: var(--st-ok); border-radius: 999px; }
+.qbar-val { text-align: right; color: var(--ink-2); }
+
 /* Gráficos */
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 14px 10px; min-width: 0; }
 .chart { position: relative; width: 100%; }
@@ -282,6 +294,7 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
   <div class="page" id="page-grupo">
     <p class="headline" id="gHeadline" aria-live="polite"></p>
     <section class="stats" id="gStats" aria-label="Contagem por estado"></section>
+    <section class="card" id="gDetail" aria-label="Estatísticas detalhadas"></section>
     <section class="card">
       <div class="chart" id="gChart">
         <svg class="plot" id="gPlot" role="group" tabindex="0" aria-label="Estado e tempo de execução por teste. Usa as setas esquerda e direita para percorrer os testes."></svg>
@@ -334,6 +347,7 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
 <script>
 (function () {
   'use strict';
+  console.log('sai daqui maroto');
 
   /* Dados de exemplo (grupos 14 e 45 do ficheiro de 8 de novembro).
      Linha: [id, compilou, executou, timeout, semMemoria, certas[], erradas[], validacao, tempoS, memMB, fugasMB] */
@@ -439,6 +453,73 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
     return STATES.map(function (s) {
       return '<div class="stat"><span class="sw sw-' + s.id + '"></span><div class="stat-n">' + c[s.id] + '<small>' + pct(c[s.id], n) + '%</small></div><div class="stat-l">' + s.label + '</div></div>';
     }).join('');
+  }
+  function pickNum(rows, field) {
+    return rows.map(function (r) { return r[field]; }).filter(function (v) { return !isNil(v) && !isNaN(v); });
+  }
+  function avg(arr) { return arr.length ? arr.reduce(function (a, b) { return a + b; }, 0) / arr.length : null; }
+  function maxOf(arr) { return arr.length ? Math.max.apply(null, arr) : null; }
+  function longestStreak(rows, pred) {
+    var best = 0, cur = 0;
+    rows.forEach(function (r) { if (pred(r)) { cur++; best = Math.max(best, cur); } else cur = 0; });
+    return best;
+  }
+  function queryRates(rows) {
+    var out = [];
+    for (var k = 0; k < 3; k++) {
+      var c = 0, t = 0;
+      rows.forEach(function (r) {
+        if (r.cq[k] !== undefined) { c += (+r.cq[k] || 0); t += (+r.cq[k] || 0) + (+r.wq[k] || 0); }
+      });
+      out.push(t ? 100 * c / t : null);
+    }
+    return out;
+  }
+  function noexecBreakdown(rows) {
+    var out = { timeout: 0, oom: 0, other: 0 };
+    rows.forEach(function (r) {
+      if (classify(r) !== 'noexec') return;
+      if (r.timeout) out.timeout++;
+      else if (r.oom) out.oom++;
+      else out.other++;
+    });
+    return out;
+  }
+  function groupDetailHTML(rows, c) {
+    var durs = pickNum(rows, 'dur'), mems = pickNum(rows, 'mem'), leaks = pickNum(rows, 'leaks'), vals = pickNum(rows, 'val');
+    var aVal = avg(vals), aDur = avg(durs), xDur = maxOf(durs), aMem = avg(mems), xMem = maxOf(mems), aLeak = avg(leaks);
+    var kpis = [
+      { n: isNil(aVal) ? '–' : fmt(aVal, 0) + '%', l: 'Validação média' },
+      { n: isNil(aDur) ? '–' : fmt(aDur, 1) + ' s', l: 'Tempo médio de execução' },
+      { n: isNil(xDur) ? '–' : fmt(xDur, 1) + ' s', l: 'Tempo máximo' },
+      { n: isNil(aMem) ? '–' : fmt(aMem, 0) + ' MB', l: 'Memória média' },
+      { n: isNil(xMem) ? '–' : fmt(xMem, 0) + ' MB', l: 'Memória máxima' },
+      { n: isNil(aLeak) ? '–' : fmt(aLeak, 3) + ' MB', l: 'Fugas médias' },
+      { n: longestStreak(rows, function (r) { return classify(r) === 'ok'; }), l: 'Maior sequência 100% certa' }
+    ];
+    var kpiHTML = '<div class="kpis">' + kpis.map(function (k) {
+      return '<div class="kpi"><div class="kpi-n">' + k.n + '</div><div class="kpi-l">' + k.l + '</div></div>';
+    }).join('') + '</div>';
+
+    var rates = queryRates(rows);
+    var qHTML = '<div class="qbars">' + rates.map(function (r, i) {
+      var pctv = r === null ? 0 : Math.round(r);
+      return '<div class="qbar-row"><span class="qbar-name">Q' + (i + 1) + '</span>' +
+        '<span class="qbar-track"><span class="qbar-fill" style="width:' + pctv + '%"></span></span>' +
+        '<span class="qbar-val mono">' + (r === null ? '–' : pctv + '%') + '</span></div>';
+    }).join('') + '</div>';
+
+    var nb = noexecBreakdown(rows), nbHTML = '';
+    if (c.noexec > 0) {
+      var parts = [];
+      if (nb.timeout) parts.push(nb.timeout + ' por tempo esgotado');
+      if (nb.oom) parts.push(nb.oom + ' por falta de memória');
+      if (nb.other) parts.push(nb.other + ' por outro motivo');
+      if (parts.length) nbHTML = '<p class="hint" style="margin-top:12px">Dos testes que não executaram: ' + parts.join(', ') + '.</p>';
+    }
+
+    return '<p class="hint">Estatísticas detalhadas</p>' + kpiHTML +
+      '<p class="hint" style="margin-top:14px">Taxa de acerto por query</p>' + qHTML + nbHTML;
   }
   function queriesText(r) {
     if (!r.cq.length) return '–';
@@ -639,6 +720,7 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
     var rows = data[current], c = countsOf(rows), n = rows.length, ran = c.ok + c.wrong;
     $('gHeadline').innerHTML = '<b>' + current + '</b> executou em <b>' + ran + ' de ' + n + '</b> testes (' + pct(ran, n) + '%) e acertou em todas as queries em <b>' + c.ok + '</b>.';
     $('gStats').innerHTML = statCards(c, n);
+    $('gDetail').innerHTML = groupDetailHTML(rows, c);
     var ids = rows.map(function (r) { return r.id; }), min = ids[0], max = ids[ids.length - 1], have = {}, miss = [], i;
     ids.forEach(function (x) { have[x] = 1; });
     for (i = min; i <= max; i++) if (!have[i]) miss.push(i);
@@ -1012,7 +1094,6 @@ if ('serviceWorker' in navigator) {
   // updateViaCache: 'none' stops the browser from ever using an HTTP-cached
   // copy of service-worker.js itself, so a new version is always detected.
   navigator.serviceWorker.register('service-worker.js', { updateViaCache: 'none' })
-    .then(reg => reg.update())
     .catch(err => console.error('SW registration failed:', err));
 }
 </script>
