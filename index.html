@@ -5,7 +5,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-/* Layout: uma coluna de ferramenta. Upload e opções no topo, separadores (Grupo, Comparar, Turma, Ranking) e uma página de cada vez. */
+/* Layout: uma coluna de ferramenta. Upload e opções no topo, separadores (Grupo, Comparar, Turma, Ranking, Último) e uma página de cada vez. */
 :root {
   --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-data: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -247,12 +247,24 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
 .cmp td:first-child { font-family: var(--font-ui); }
 .cmp td:first-child .sw { margin: 0 8px 0 0; vertical-align: -1px; }
 .foot { color: var(--muted); font-size: 12.5px; margin: 0; max-width: 80ch; }
+
+/* Linha do teste */
+.trow-wrap { overflow-x: auto; }
+.trow { display: grid; grid-template-columns: 56px repeat(11, minmax(62px, 1fr)); gap: 4px; min-width: 760px; }
+.trow .h { font-size: 11.5px; color: var(--ink-2); text-align: center; padding: 0 2px 2px; white-space: nowrap; }
+.trow .c { display: flex; align-items: center; justify-content: center; min-height: 40px; border-radius: 4px; font-family: var(--font-data); font-variant-numeric: tabular-nums; font-size: 14px; }
+.trow .c.t { background: none; font-family: var(--font-ui); font-weight: 600; }
+.trow .c-ok { background: rgba(12, 163, 12, 0.30); }
+.trow .c-bad { background: rgba(208, 59, 59, 0.32); }
+.trow .c-mid { background: rgba(250, 178, 25, 0.38); }
+.trow .c-na { background: rgba(128, 128, 128, 0.24); color: var(--ink-2); }
+.trow .c-num { background: rgba(42, 120, 214, 0.26); }
 </style>
 
 <div class="wrap">
   <header>
     <h1>Testes LI3 por grupo</h1>
-    <p class="lede">Larga o ficheiro <span class="mono">li3_dump.json</span> e explora os resultados: um grupo, dois grupos lado a lado, a turma toda ou o ranking de um teste.</p>
+    <p class="lede">Larga o ficheiro <span class="mono">li3_dump.json</span> e explora os resultados: um grupo, dois grupos lado a lado, a turma toda, o ranking de um teste ou só o último teste.</p>
   </header>
 
   <div class="drop" id="drop" style="cursor:default;">
@@ -269,10 +281,11 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
     <a href="#comparar" data-p="comparar">Comparar</a>
     <a href="#turma" data-p="turma">Turma</a>
     <a href="#ranking" data-p="ranking">Ranking</a>
+    <a href="#ultimo" data-p="ultimo">Último</a>
   </nav>
 
   <section class="controls" aria-label="Opções">
-    <div class="field" id="fGroup" data-pages="grupo comparar ranking">
+    <div class="field" id="fGroup" data-pages="grupo comparar ranking ultimo">
       <label for="group">Grupo</label>
       <select id="group"></select>
     </div>
@@ -301,6 +314,10 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
         <div class="tip" id="gTip" role="status" aria-live="polite" hidden></div>
       </div>
       <p class="hint">Passa o rato, toca ou usa as setas para ver os detalhes de cada teste.</p>
+    </section>
+    <section class="card">
+      <div class="trow-wrap" id="gRow"></div>
+      <p class="hint" id="gRowHint"></p>
     </section>
     <section>
       <div class="tbar"><button type="button" class="linkbtn" id="gTblBtn" aria-expanded="false" aria-controls="gTblWrap">Ver tabela</button></div>
@@ -342,6 +359,13 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
     <div class="tablewrap" id="rWrap"><table id="rTbl"></table></div>
     <p class="foot">Clica num número de grupo para abrir a página desse grupo. Clica nos cabeçalhos para ordenar.</p>
   </div>
+
+  <!-- ÚLTIMO -->
+  <div class="page" id="page-ultimo" hidden>
+    <p class="headline" id="uHeadline" aria-live="polite"></p>
+    <section class="stats" id="uStats" aria-label="Estado e queries do último teste"></section>
+    <section class="card" id="uDetail" aria-label="Detalhes do último teste"></section>
+  </div>
 </div>
 
 <script>
@@ -349,9 +373,9 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
   'use strict';
   console.log('sai daqui maroto');
 
-  /* Dados de exemplo (grupos 14 e 45 do ficheiro de 8 de novembro).
+  /* Dados de exemplo (grupos 14 e 45 do ficheiro de 8 de novembro, testes 70 a 78, encurtado).
      Linha: [id, compilou, executou, timeout, semMemoria, certas[], erradas[], validacao, tempoS, memMB, fugasMB] */
-  var SAMPLE = {"G14":[[1,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[2,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[3,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[4,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[5,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[6,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[7,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[8,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[9,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[10,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[11,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[12,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[13,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[14,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[15,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[16,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[17,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[18,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[19,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[20,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[21,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[22,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[23,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[24,1,1,0,0,[8,0,0],[2,10,10],0,12.2,642.82,0.017],[25,1,1,0,0,[10,0,0],[0,10,10],100,11.7,641.484,0.017],[26,1,1,0,0,[10,0,0],[0,10,10],0,12.5,641.748,0.017],[27,1,1,0,0,[10,0,0],[0,10,10],100,12.1,601.288,0.017],[28,1,1,0,0,[10,0,0],[0,10,10],96,11.7,601.524,0.017],[29,1,0,0,0,[0,0,0],[10,10,10],100,11.6,601.288,18.655],[30,1,1,0,0,[10,10,10],[0,0,0],100,13.3,601.844,0.017],[31,1,1,0,0,[10,10,10],[0,0,0],100,11,601.544,0.017],[32,1,1,0,0,[10,10,10],[0,0,0],100,9.7,601.856,0.017],[33,1,1,0,0,[10,10,10],[0,0,0],100,10.5,601.444,0.017],[34,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[35,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[36,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[37,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[38,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[39,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[40,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[41,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[42,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[43,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[44,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[45,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[46,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[47,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[48,1,0,0,0,[0,0,0],[10,10,10],0,0,2.56,null],[49,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[50,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[51,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[52,1,1,0,0,[10,0,10],[0,10,0],100,12.9,601.472,4.339],[53,1,1,0,0,[10,10,10],[0,0,0],100,14,601.672,6.437],[54,1,1,0,0,[10,10,10],[0,0,0],100,13.8,601.476,0.017],[55,1,1,0,0,[10,10,10],[0,0,0],100,13.2,601.42,0.017],[56,1,1,0,0,[10,10,10],[0,0,0],100,13.2,601.604,0.017],[57,1,1,0,0,[10,10,10],[0,0,0],100,14.1,601.544,0.017],[58,1,1,0,0,[10,10,10],[0,0,0],100,14,601.604,0.017],[59,1,1,0,0,[10,10,10],[0,0,0],100,13.5,601.292,0.017],[60,1,1,0,0,[10,10,10],[0,0,0],100,14.1,601.476,0.017],[61,1,1,0,0,[10,10,10],[0,0,0],100,14.6,601.544,0.017],[62,1,1,0,0,[10,10,10],[0,0,0],100,13.3,601.792,0.017],[63,1,1,0,0,[10,10,10],[0,0,0],100,14.5,601.288,0.017],[64,1,1,0,0,[10,10,10],[0,0,0],100,13.4,601.604,0.017],[65,1,1,0,0,[10,10,10],[0,0,0],100,12.8,601.416,0.017],[66,1,1,0,0,[10,10,10],[0,0,0],100,13.8,601.728,0.017],[67,1,1,0,0,[10,10,10],[0,0,0],100,13,601.544,0.017],[68,1,1,0,0,[10,10,10],[0,0,0],100,14,601.604,0.017],[69,1,1,0,0,[10,10,10],[0,0,0],100,13.4,601.292,0.017],[70,1,1,0,0,[10,10,10],[0,0,0],100,13.6,601.728,0.017],[71,1,1,0,0,[10,10,10],[0,0,0],100,15.3,601.164,0.017],[72,1,1,0,0,[10,10,10],[0,0,0],100,15.4,601.372,0.017],[73,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[74,1,1,0,0,[10,10,10],[0,0,0],100,13.6,601.728,0.017],[75,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[76,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[77,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[78,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[79,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[80,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[81,1,1,0,0,[10,10,10],[0,0,0],100,13.3,601.568,0.017],[82,1,1,0,0,[10,10,10],[0,0,0],100,14.3,611.62,0.017],[83,1,1,0,0,[10,10,10],[0,0,0],100,12.6,601.312,0.017],[84,1,1,0,0,[10,10,10],[0,0,0],100,14,611.62,0.017],[85,1,1,0,0,[10,10,10],[0,0,0],100,15.1,601.568,0.017],[86,1,1,0,0,[10,10,10],[0,0,0],100,15.7,611.52,0.017],[87,1,1,0,0,[10,10,10],[0,0,0],100,15.4,601.288,0.017],[88,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[89,1,1,0,0,[10,10,10],[0,0,0],100,14.6,601.568,0.017],[90,1,1,0,0,[10,10,10],[0,0,0],100,12.4,611.544,0.017],[91,1,1,0,0,[10,10,10],[0,0,0],100,12.1,601.308,0.017],[92,1,1,0,0,[10,10,10],[0,0,0],100,13.9,611.62,0.017],[93,1,1,0,0,[10,10,10],[0,0,0],100,12.2,601.784,0.017],[94,1,1,0,0,[10,10,10],[0,0,0],100,12.2,611.876,0.017],[95,1,1,0,0,[10,10,10],[0,0,0],100,12.7,601.312,0.017],[96,1,1,0,0,[10,10,10],[0,0,0],100,12.2,611.876,0.017],[97,1,1,0,0,[10,10,10],[0,0,0],100,12.8,601.308,0.017],[98,1,1,0,0,[10,10,10],[0,0,0],100,12.5,611.968,0.017],[99,1,1,0,0,[10,10,10],[0,0,0],100,14.4,601.564,0.017],[100,1,1,0,0,[10,10,10],[0,0,0],100,13,611.876,0.017],[101,1,1,0,0,[10,10,10],[0,0,0],100,13.2,601.372,0.017],[102,1,1,0,0,[10,10,10],[0,0,0],100,13.4,611.62,0.017],[103,1,1,0,0,[10,10,10],[0,0,0],100,14.6,601.284,0.017],[104,1,1,0,0,[10,10,10],[0,0,0],100,13.5,611.748,0.017],[105,1,1,0,0,[10,10,10],[0,0,0],100,14.7,601.296,0.017],[106,1,1,0,0,[10,10,10],[0,0,0],100,13.3,611.624,0.017],[107,1,1,0,0,[10,10,10],[0,0,0],100,12.8,601.472,0.017],[108,1,1,0,0,[10,10,10],[0,0,0],100,13.1,611.876,0.017],[109,1,1,0,0,[10,10,10],[0,0,0],100,13.3,601.284,0.017],[110,1,1,0,0,[10,10,10],[0,0,0],100,16.8,611.624,0.017],[111,1,1,0,0,[10,10,10],[0,0,0],100,13.4,601.312,0.017],[112,1,1,0,0,[10,10,10],[0,0,0],100,14,611.608,0.017],[113,1,1,0,0,[10,10,10],[0,0,0],100,13.2,601.564,0.017],[114,1,1,0,0,[10,10,10],[0,0,0],100,17.3,611.88,0.017],[115,1,1,0,0,[10,10,10],[0,0,0],100,14.3,601.312,0.017],[116,1,1,0,0,[10,10,10],[0,0,0],100,12.2,611.62,0.017],[117,1,1,0,0,[10,10,10],[0,0,0],100,13.3,601.304,0.017],[118,1,1,0,0,[10,10,10],[0,0,0],100,13.8,611.648,0.017],[119,1,1,0,0,[10,10,10],[0,0,0],100,13.4,601.308,0.017],[120,1,1,0,0,[10,10,10],[0,0,0],100,13.9,611.724,0.017],[121,1,1,0,0,[10,10,10],[0,0,0],100,13.2,601.436,0.017],[122,1,1,0,0,[10,10,10],[0,0,0],100,14.7,612.008,0.017],[123,1,1,0,0,[10,10,10],[0,0,0],100,13.2,601.568,0.017],[124,1,1,0,0,[10,10,10],[0,0,0],100,11.9,611.572,0.017],[125,1,1,0,0,[10,10,10],[0,0,0],100,15.5,601.44,0.017],[126,1,1,0,0,[10,10,10],[0,0,0],100,13.4,601.64,0.017],[127,1,1,0,0,[10,10,10],[0,0,0],100,13.2,611.448,0.017],[128,1,1,0,0,[10,10,10],[0,0,0],100,13.2,611.624,0.017]],"G45":[[1,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[2,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[3,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[4,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[5,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[6,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[7,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[8,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[9,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[10,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[11,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[12,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[13,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[14,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[15,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[16,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[17,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[18,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[19,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[20,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[21,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[22,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[23,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[24,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[25,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[26,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[27,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[28,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[29,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[30,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[31,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[32,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[33,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[34,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[35,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[36,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[37,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[38,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[39,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[40,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[41,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[42,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[43,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[44,1,1,0,0,[0,0,0],[10,10,10],0,0,2.432,0.017],[45,1,1,0,0,[0,0,0],[10,10,10],100,0,2.432,0.017],[46,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[47,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[48,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[49,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[50,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[51,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[52,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[53,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[54,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[55,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[56,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[57,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[58,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[59,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[60,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[61,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[62,1,1,0,0,[0,0,0],[10,10,10],0,0,2.432,0.017],[63,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[64,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[65,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[66,1,1,0,0,[0,0,0],[10,10,10],0,0,2.432,0.017],[67,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[68,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[69,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[70,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[71,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[72,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[73,1,1,0,0,[0,0,0],[10,10,10],100,0,2.432,0.017],[74,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[75,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[76,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[77,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[78,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[79,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[80,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[81,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[82,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[83,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[84,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[85,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[86,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[87,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[88,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[89,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[90,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[91,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[92,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[93,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[94,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[95,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[96,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[97,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[98,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[99,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[100,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[101,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[102,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[103,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[104,1,1,0,0,[10,10,10],[0,0,0],100,16.6,1579.12,0.017],[105,1,1,0,0,[10,10,10],[0,0,0],100,16.3,1578.88,0.017],[106,1,1,0,0,[10,10,10],[0,0,0],100,20.9,1579.124,0.017],[107,1,1,0,0,[10,10,10],[0,0,0],100,14,1579.124,0.017],[108,1,1,0,0,[10,10,10],[0,0,0],100,17.8,1579.252,0.017],[109,1,1,0,0,[10,10,10],[0,0,0],100,12.3,907.648,0],[110,1,1,0,0,[10,10,10],[0,0,0],100,7.5,666.752,0],[111,1,1,0,0,[10,10,10],[0,0,0],100,7.5,667.008,0],[112,1,1,0,0,[10,10,10],[0,0,0],100,6.7,667.136,0],[113,1,1,0,0,[10,10,10],[0,0,0],100,7.3,667.264,0],[114,1,1,0,0,[10,10,10],[0,0,0],100,6.8,667.008,0],[115,1,1,0,0,[10,10,10],[0,0,0],100,7.1,667.264,0],[116,1,1,0,0,[10,10,10],[0,0,0],100,6.4,666.88,0],[117,1,1,0,0,[10,10,10],[0,0,0],100,7.4,667.008,0],[118,1,1,0,0,[10,10,10],[0,0,0],100,6.1,667.136,0],[119,1,1,0,0,[10,10,10],[0,0,0],100,6.9,667.136,0],[120,1,1,0,0,[10,10,10],[0,0,0],100,6.4,667.264,0],[121,1,1,0,0,[10,10,10],[0,0,0],100,7.5,667.264,0],[122,1,1,0,0,[10,10,10],[0,0,0],100,6.4,667.264,0],[123,1,1,0,0,[10,10,10],[0,0,0],100,7.8,667.264,0],[124,1,1,0,0,[10,10,10],[0,0,0],100,6,667.136,0],[125,1,1,0,0,[10,10,10],[0,0,0],100,6.2,667.264,0],[126,1,1,0,0,[10,10,10],[0,0,0],100,6.9,667.008,0],[127,1,1,0,0,[10,10,10],[0,0,0],100,6.9,667.264,0],[128,1,1,0,0,[10,10,10],[0,0,0],100,6.2,667.008,0]]};
+  var SAMPLE = {"G14":[[70,1,1,0,0,[10,10,10],[0,0,0],100,13.6,601.728,0.017],[71,1,1,0,0,[10,10,10],[0,0,0],100,15.3,601.164,0.017],[72,1,1,0,0,[10,10,10],[0,0,0],100,15.4,601.372,0.017],[73,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[74,1,1,0,0,[10,10,10],[0,0,0],100,13.6,601.728,0.017],[75,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[76,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null],[77,0,0,0,0,[0,0,0],[10,10,10],100,null,null,null],[78,0,0,0,0,[0,0,0],[10,10,10],0,null,null,null]],"G45":[[70,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[71,1,1,0,0,[0,0,0],[10,10,10],100,0,2.56,0.017],[72,1,1,0,0,[0,0,0],[10,10,10],0,0,2.56,0.017],[73,1,1,0,0,[0,0,0],[10,10,10],100,0,2.432,0.017],[74,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[75,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[76,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null],[77,1,0,1,0,[0,0,0],[10,10,10],100,null,null,null],[78,1,0,1,0,[0,0,0],[10,10,10],0,null,null,null]]};
 
   var STATES = [
     { id: 'ok',        label: 'Executou, queries todas certas', short: 'Tudo certo' },
@@ -361,7 +385,7 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
   ];
   var SBY = {}; STATES.forEach(function (s) { SBY[s.id] = s; });
   var SRANK = { nocompile: 0, noexec: 1, wrong: 2, ok: 3 };
-  var PAGES = ['grupo', 'comparar', 'turma', 'ranking'];
+  var PAGES = ['grupo', 'comparar', 'turma', 'ranking', 'ultimo'];
 
   var $ = function (id) { return document.getElementById(id); };
   var data = {};            // grupo -> linhas ordenadas por teste
@@ -736,7 +760,37 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
         '<td>' + fmt(r.val, 0) + '</td><td>' + fmt(r.dur, 1) + '</td><td>' + fmt(r.mem, 0) + '</td><td>' + fmt(r.leaks, 3) + '</td></tr>';
     }).join('');
     $('gTbl').innerHTML = head + '<tbody>' + body + '</tbody>';
+    renderTestRow(gChart.sel);
     gChart.render();
+  }
+
+  /* ---------- Linha do teste (Grupo) ---------- */
+  function renderTestRow(sel) {
+    var rows = data[current], el = $('gRow');
+    if (!rows || !rows.length) { el.innerHTML = ''; return; }
+    var id = (sel !== null && sel !== undefined && maps[current][sel]) ? sel : rows[rows.length - 1].id;
+    var r = maps[current][id], ran = r.executed;
+    function cell(cls, txt) { return '<div class="c ' + cls + '">' + txt + '</div>'; }
+    function tick(ok) { return cell(ok ? 'c-ok' : 'c-bad', ok ? '✓' : '✗'); }
+    function qcell(k) {
+      if (r.cq[k] === undefined) return cell('c-na', '–');
+      var t = r.cq[k] + (+r.wq[k] || 0), p = pct(r.cq[k], t);
+      return cell(!ran ? 'c-na' : p === 100 ? 'c-ok' : p === 0 ? 'c-bad' : 'c-mid', p + '%');
+    }
+    var avgP = Math.round(qpct(r));
+    var val = r.val, leaks = r.leaks;
+    var heads = ['Teste', 'Compilou', 'Executou', 'Limites', 'Q1', 'Q2', 'Q3', 'Queries', 'Valid.', 'Fugas (MB)', 'Tempo (s)', 'Mem. (MB)'];
+    var h = heads.map(function (x) { return '<div class="h">' + x + '</div>'; }).join('');
+    var b = cell('t', current + ' · ' + id) +
+      tick(r.compiled) + tick(r.executed) + tick(r.compiled && !r.timeout && !r.oom) +
+      qcell(0) + qcell(1) + qcell(2) +
+      cell(!ran ? 'c-na' : avgP === 100 ? 'c-ok' : avgP === 0 ? 'c-bad' : 'c-mid', avgP + '%') +
+      cell(isNil(val) ? 'c-na' : val >= 100 ? 'c-ok' : val <= 0 ? 'c-bad' : 'c-mid', isNil(val) ? '–' : fmt(val, 0) + '%') +
+      cell(isNil(leaks) ? 'c-na' : leaks > 1 ? 'c-bad' : 'c-ok', isNil(leaks) ? '–' : fmt(leaks, 3)) +
+      cell('c-num', isNil(r.dur) ? '–' : fmt(r.dur, 1)) +
+      cell('c-num', isNil(r.mem) ? '–' : fmt(r.mem, 0));
+    el.innerHTML = '<div class="trow">' + h + b + '</div>';
+    $('gRowHint').textContent = (sel !== null && sel !== undefined && maps[current][sel]) ? 'Teste ' + id + '.' : 'Último teste (' + id + '). Passa o rato no gráfico para ver outro.';
   }
 
   /* ---------- Página: Comparar ---------- */
@@ -920,6 +974,48 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
     $('rTbl').innerHTML = head + '<tbody>' + body + '</tbody>';
   }
 
+  /* ---------- Página: Último teste ---------- */
+  function renderUltimoPage() {
+    var T = agg.ids[agg.ids.length - 1], r = maps[current] && maps[current][T];
+    if (!r) {
+      $('uHeadline').innerHTML = '<b>' + current + '</b> não tem dados no teste <b>' + T + '</b>.';
+      $('uStats').innerHTML = ''; $('uDetail').innerHTML = '';
+      return;
+    }
+    var c = classify(r), mine = score(r), better = 0, total = 0;
+    Object.keys(data).forEach(function (g) {
+      var o = maps[g][T];
+      if (!o) return;
+      total++; if (score(o) > mine) better++;
+    });
+    $('uHeadline').innerHTML = 'Teste <b>' + T + '</b>, <b>' + current + '</b>: ' + SBY[c].label.toLowerCase() +
+      '. Posição <b>' + (better + 1) + '</b> de ' + total + ' grupos.';
+
+    var cards = '<div class="stat"><span class="sw sw-' + c + '"></span><div class="stat-n">' + SBY[c].short +
+      '</div><div class="stat-l">' + SBY[c].label + '</div></div>';
+    [0, 1, 2].forEach(function (k) {
+      if (r.cq[k] === undefined) return;
+      var t = r.cq[k] + (+r.wq[k] || 0);
+      cards += '<div class="stat"><span class="sw sw-' + (r.cq[k] === t ? 'ok' : 'wrong') + '"></span><div class="stat-n">' +
+        r.cq[k] + '/' + t + '<small>' + pct(r.cq[k], t) + '%</small></div><div class="stat-l">Query Q' + (k + 1) + '</div></div>';
+    });
+    $('uStats').innerHTML = cards;
+
+    var flags = [];
+    if (r.timeout) flags.push('tempo esgotado');
+    if (r.oom) flags.push('sem memória');
+    var kp = [
+      { n: isNil(r.val) ? '–' : fmt(r.val, 0) + '%', l: 'Validação' },
+      { n: isNil(r.dur) ? '–' : fmt(r.dur, 1) + ' s', l: 'Tempo de execução' },
+      { n: isNil(r.mem) ? '–' : fmt(r.mem, 0) + ' MB', l: 'Memória' },
+      { n: isNil(r.leaks) ? '–' : fmt(r.leaks, 3) + ' MB', l: 'Fugas' },
+      { n: fmt(qpct(r), 0) + '%', l: 'Queries certas' }
+    ];
+    $('uDetail').innerHTML = '<div class="kpis" style="margin-top:0">' + kp.map(function (k) {
+      return '<div class="kpi"><div class="kpi-n">' + k.n + '</div><div class="kpi-l">' + k.l + '</div></div>';
+    }).join('') + '</div>' + (flags.length ? '<p class="hint" style="margin-top:12px">Limite atingido: ' + flags.join(', ') + '.</p>' : '');
+  }
+
   /* ---------- Controlo geral ---------- */
   var gChart = makeChart('g', drawGroup, tipGroup);
   var cChart = makeChart('c', drawCompare, tipCompare);
@@ -927,6 +1023,7 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
   gChart.onSel = function (id) {
     var trs = $('gTbl').querySelectorAll('tbody tr');
     for (var i = 0; i < trs.length; i++) trs[i].classList.toggle('sel', id !== null && +trs[i].getAttribute('data-id') === id);
+    renderTestRow(id);
   };
 
   function optionsFor(keys, sel) {
@@ -964,6 +1061,7 @@ th[aria-sort] .ar { opacity: 1; color: var(--ink); }
     else if (p === 'comparar') renderComparePage();
     else if (p === 'turma') renderTurmaPage();
     else if (p === 'ranking') renderRankingPage();
+    else if (p === 'ultimo') renderUltimoPage();
   }
   function route() {
     var h = (window.location && window.location.hash || '').replace('#', '');
