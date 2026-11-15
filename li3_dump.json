@@ -467058,5 +467058,4651 @@
         ]
       }
     ]
+  },
+  "201": {
+    "text": "LI3 Automatic Testing\nTests|Groups|Pending groups|Create group|FAQ|Dark mode\n202 - 2026-11-15 [0h]\n201 - 2026-11-14 [22h]\n200 - 2026-11-14 [20h]\n199 - 2026-11-14 [18h]\n198 - 2026-11-14 [16h]\n197 - 2026-11-14 [14h]\n196 - 2026-11-14 [12h]\n195 - 2026-11-14 [10h]\n194 - 2026-11-14 [8h]\n193 - 2026-11-14 [6h]\n192 - 2026-11-14 [4h]\n191 - 2026-11-14 [2h]\nInput used\nPrivate dataset, without invalid entries.\nRepo\tLog\tPDF\tTest\tMake\tExec\tQ1\tQ2\tQ3\tTotal\tVal.\tLeaks MB*\tTime S\tMem MB\nG01\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t13.4\t1599\nG02\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t22.6\t1354\nG03\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t22.3\t1635\nG04\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t21.6\t1546\nG05\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t26.3\t1078\nG06\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t39.5\t1503\nG07\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t26.1\t1749\nG08\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t16.9\t1462\nG09\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t17\t2017\nG10\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t16.8\t1470\nG11\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t16.4\t1106\nG12\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t18.1\t1425\nG13\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t20.9\t1152\nG14\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t13.7\t601\nG15\t\t2/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t8.2\t544\nG16\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t34.9\t1998\nG17\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t21.6\t2388\nG18\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t35\t3350\nG19\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t22\t1912\nG20\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t53.4\t1778\nG21\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t22.8\t768\nG22\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t18.4\t1534\nG23\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t57\t1953\nG24\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t26.3\t2364\nG25\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t35\t2014\nG26\t\t2/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t8.8\t682\nG27\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t69.3\t3758\nG28\t\t2/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t14.8\t1506\nG29\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t33.5\t2032\nG30\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t23\t1620\nG31\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t19.1\t1852\nG32\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t17.6\t2504\nG33\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t19.1\t2401\nG34\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t16.9\t1712\nG35\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t22.1\t1771\nG36\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t70.7\t3538\nG37\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t17.7\t2041\nG38\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t10.2\t776\nG39\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t26.4\t2566\nG40\t\t0/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t7.6\t343\nG41\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t21.8\t2541\nG42\t\t0/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t34.2\t2083\nG43\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t21.1\t2383\nG44\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t25.8\t2550\nG45\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t6.1\t667\nG46\t\t0/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t6.2\t704\nG47\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t22.4\t2143\nG48\t\t0/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t32.3\t2398\nG49\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t20.5\t1916\nG50\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t37.8\t1346\nG51\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t19.5\t1539\nG52\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t16.7\t1691\nG53\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t6.8\t850\nG54\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t27.9\t3417\nG55\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t27.1\t1929\nG56\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t29.8\t2536\nG57\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t19.1\t1043\nG58\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t92.1\t2533\nG59\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t17.6\t1681\nG60\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t94.2\t1443\nG61\t\t0/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t11.3\t626\nG62\t\t2/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t17\t810\nG63\t\t0/2\t\t\t\t100%\t80%\t100%\t93%\t100%\t0.017\t99.2\t2940\nG64\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t27.1\t3188\nG65\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t14.5\t1114\nG66\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t30\t3601\nG67\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t19.6\t1481\nG68\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t75.2\t3676\nG69\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.018\t26.5\t1849\nG70\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t21\t1182\n*Leaks tested with a lite version of the regular clean dataset.\nStatistics\nTotal runs: 70\nCompleted make percentage: 100%\nCompleted execution percentage: 100%\nCorrect queries percentage: 100%\nAverage leaks (regular dataset): 0MB\nAverage execution time: 27s\nAverage memory usage: 1818MB\nAverage validation score: 100%",
+    "json": [
+      {
+        "url": "https://li3.di.uminho.pt/config.json",
+        "data": {
+          "app": {
+            "name": "LI3 Automatic Testing"
+          },
+          "api": {
+            "baseUrl": "/api"
+          },
+          "groups": {
+            "emailPlaceholder": "numero@alunos.uminho.pt"
+          },
+          "testing": {
+            "queryCount": 3,
+            "projectDirectory": "trabalho-pratico",
+            "buildCommand": "make",
+            "reportPaths": [
+              "trabalho-pratico/relatorio-fase1.pdf",
+              "trabalho-pratico/relatorio-fase2.pdf"
+            ],
+            "testProgramPath": "trabalho-pratico/programa-testes",
+            "mainProgram": "./programa-principal",
+            "dataArgument": "<data-folder>",
+            "inputArgument": "<input>",
+            "leaksNote": "Leaks tested with a lite version of the regular clean dataset.",
+            "scheduleTimezone": "GMT",
+            "schedules": [
+              {
+                "times": [
+                  "02h",
+                  "06h",
+                  "10h",
+                  "14h",
+                  "18h",
+                  "22h"
+                ],
+                "dataset": "Small (~400MB)",
+                "invalidEntries": false,
+                "maxMemory": "4 GiB",
+                "maxTime": "5min"
+              },
+              {
+                "times": [
+                  "00h",
+                  "04h",
+                  "08h",
+                  "12h",
+                  "16h",
+                  "20h"
+                ],
+                "dataset": "Small (~400MB)",
+                "invalidEntries": true,
+                "maxMemory": "4 GiB",
+                "maxTime": "5min"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "url": "https://li3.di.uminho.pt/api/test/201/stats",
+        "data": {
+          "totalRuns": 70,
+          "totalSucceededCompiles": 70,
+          "totalSucceededExecs": 70,
+          "totalQueries": 2100,
+          "totalCorrectQueries": 2098,
+          "averageTimeS": 27.4771428571429,
+          "averageLeaksMb": 0.0148285714285714,
+          "averageMemMb": 1818.04788571429,
+          "averageValidationScore": 100,
+          "info": "Private dataset, without invalid entries."
+        }
+      },
+      {
+        "url": "https://li3.di.uminho.pt/api/run/201",
+        "data": [
+          {
+            "testId": 201,
+            "repoId": "G01",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 13.4,
+            "maxMemoryMb": 1599.42,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G02",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 22.6,
+            "maxMemoryMb": 1353.536,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G03",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 22.3,
+            "maxMemoryMb": 1634.888,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G04",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 21.6,
+            "maxMemoryMb": 1545.736,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G05",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 26.3,
+            "maxMemoryMb": 1078.288,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G06",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 39.5,
+            "maxMemoryMb": 1502.928,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G07",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 26.1,
+            "maxMemoryMb": 1748.532,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G08",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 16.9,
+            "maxMemoryMb": 1462.216,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G09",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 17,
+            "maxMemoryMb": 2017.308,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G10",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 16.8,
+            "maxMemoryMb": 1469.856,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G11",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 16.4,
+            "maxMemoryMb": 1105.964,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G12",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 18.1,
+            "maxMemoryMb": 1425.172,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G13",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 20.9,
+            "maxMemoryMb": 1151.652,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G14",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 13.7,
+            "maxMemoryMb": 601.432,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G15",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 8.2,
+            "maxMemoryMb": 543.968,
+            "ignoreLeaks": true,
+            "report2": true,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G16",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 34.9,
+            "maxMemoryMb": 1998.032,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G17",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 21.6,
+            "maxMemoryMb": 2388.296,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G18",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 35,
+            "maxMemoryMb": 3349.844,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G19",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 22,
+            "maxMemoryMb": 1911.812,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G20",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 53.4,
+            "maxMemoryMb": 1778.48,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G21",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 22.8,
+            "maxMemoryMb": 768.476,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G22",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 18.4,
+            "maxMemoryMb": 1534.368,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G23",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 57,
+            "maxMemoryMb": 1952.668,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G24",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 26.3,
+            "maxMemoryMb": 2364.052,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G25",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 35,
+            "maxMemoryMb": 2013.728,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G26",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 8.8,
+            "maxMemoryMb": 682.344,
+            "ignoreLeaks": true,
+            "report2": true,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G27",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 69.3,
+            "maxMemoryMb": 3758.108,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G28",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 14.8,
+            "maxMemoryMb": 1505.976,
+            "ignoreLeaks": true,
+            "report2": true,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G29",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 33.5,
+            "maxMemoryMb": 2032.472,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G30",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 23,
+            "maxMemoryMb": 1620.232,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G31",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 19.1,
+            "maxMemoryMb": 1852.264,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G32",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 17.6,
+            "maxMemoryMb": 2503.664,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G33",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 19.1,
+            "maxMemoryMb": 2400.552,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G34",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 16.9,
+            "maxMemoryMb": 1712,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G35",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 22.1,
+            "maxMemoryMb": 1771.208,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G36",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 70.7,
+            "maxMemoryMb": 3538.296,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G37",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 17.7,
+            "maxMemoryMb": 2041.052,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G38",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 10.2,
+            "maxMemoryMb": 776.288,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G39",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 26.4,
+            "maxMemoryMb": 2566.04,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G40",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": false,
+            "memoryLeaksMb": 0.017,
+            "durationS": 7.6,
+            "maxMemoryMb": 343.352,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G41",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 21.8,
+            "maxMemoryMb": 2540.56,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G42",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": false,
+            "memoryLeaksMb": 0.017,
+            "durationS": 34.2,
+            "maxMemoryMb": 2083.184,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G43",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 21.1,
+            "maxMemoryMb": 2383.06,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G44",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 25.8,
+            "maxMemoryMb": 2550.224,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G45",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 6.1,
+            "maxMemoryMb": 666.88,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G46",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": false,
+            "memoryLeaksMb": 0.017,
+            "durationS": 6.2,
+            "maxMemoryMb": 703.52,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G47",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 22.4,
+            "maxMemoryMb": 2143.072,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G48",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": false,
+            "memoryLeaksMb": 0.017,
+            "durationS": 32.3,
+            "maxMemoryMb": 2397.672,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G49",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 20.5,
+            "maxMemoryMb": 1916.352,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G50",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 37.8,
+            "maxMemoryMb": 1346.404,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G51",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 19.5,
+            "maxMemoryMb": 1538.996,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G52",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 16.7,
+            "maxMemoryMb": 1690.984,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G53",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 6.8,
+            "maxMemoryMb": 849.536,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G54",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 27.9,
+            "maxMemoryMb": 3416.656,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G55",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 27.1,
+            "maxMemoryMb": 1929.252,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G56",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 29.8,
+            "maxMemoryMb": 2535.964,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G57",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 19.1,
+            "maxMemoryMb": 1042.88,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G58",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 92.1,
+            "maxMemoryMb": 2533.344,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G59",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 17.6,
+            "maxMemoryMb": 1680.74,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G60",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 94.2,
+            "maxMemoryMb": 1443.008,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G61",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": false,
+            "memoryLeaksMb": 0.017,
+            "durationS": 11.3,
+            "maxMemoryMb": 625.84,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G62",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 17,
+            "maxMemoryMb": 809.808,
+            "ignoreLeaks": true,
+            "report2": true,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G63",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              8,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              2,
+              0
+            ],
+            "nDiffs": [
+              0,
+              2,
+              0
+            ],
+            "report": false,
+            "memoryLeaksMb": 0.017,
+            "durationS": 99.2,
+            "maxMemoryMb": 2939.864,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G64",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 27.1,
+            "maxMemoryMb": 3187.86,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G65",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 14.5,
+            "maxMemoryMb": 1114.212,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G66",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 30,
+            "maxMemoryMb": 3601.152,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G67",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 19.6,
+            "maxMemoryMb": 1480.96,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G68",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 75.2,
+            "maxMemoryMb": 3676.244,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G69",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.018,
+            "durationS": 26.5,
+            "maxMemoryMb": 1848.84,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 201,
+            "repoId": "G70",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 21,
+            "maxMemoryMb": 1181.784,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          }
+        ]
+      },
+      {
+        "url": "https://li3.di.uminho.pt/api/test",
+        "data": [
+          {
+            "testId": 202,
+            "date": "2026-11-15",
+            "hour": "0h"
+          },
+          {
+            "testId": 201,
+            "date": "2026-11-14",
+            "hour": "22h"
+          },
+          {
+            "testId": 200,
+            "date": "2026-11-14",
+            "hour": "20h"
+          },
+          {
+            "testId": 199,
+            "date": "2026-11-14",
+            "hour": "18h"
+          },
+          {
+            "testId": 198,
+            "date": "2026-11-14",
+            "hour": "16h"
+          },
+          {
+            "testId": 197,
+            "date": "2026-11-14",
+            "hour": "14h"
+          },
+          {
+            "testId": 196,
+            "date": "2026-11-14",
+            "hour": "12h"
+          },
+          {
+            "testId": 195,
+            "date": "2026-11-14",
+            "hour": "10h"
+          },
+          {
+            "testId": 194,
+            "date": "2026-11-14",
+            "hour": "8h"
+          },
+          {
+            "testId": 193,
+            "date": "2026-11-14",
+            "hour": "6h"
+          },
+          {
+            "testId": 192,
+            "date": "2026-11-14",
+            "hour": "4h"
+          },
+          {
+            "testId": 191,
+            "date": "2026-11-14",
+            "hour": "2h"
+          }
+        ]
+      },
+      {
+        "url": "https://li3.di.uminho.pt/api/var/faqNotification/",
+        "data": false
+      }
+    ]
+  },
+  "202": {
+    "text": "LI3 Automatic Testing\nTests|Groups|Pending groups|Create group|FAQ|Dark mode\n202 - 2026-11-15 [0h]\n201 - 2026-11-14 [22h]\n200 - 2026-11-14 [20h]\n199 - 2026-11-14 [18h]\n198 - 2026-11-14 [16h]\n197 - 2026-11-14 [14h]\n196 - 2026-11-14 [12h]\n195 - 2026-11-14 [10h]\n194 - 2026-11-14 [8h]\n193 - 2026-11-14 [6h]\n192 - 2026-11-14 [4h]\n191 - 2026-11-14 [2h]\nInput used\nPrivate dataset, with invalid entries.\nRepo\tLog\tPDF\tTest\tMake\tExec\tQ1\tQ2\tQ3\tTotal\tVal.\tLeaks MB*\tTime S\tMem MB\nG01\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t16.2\t1599\nG02\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t24\t1353\nG03\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t25.9\t1635\nG04\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t24\t1546\nG05\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t28.8\t1078\nG06\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t37.8\t1503\nG07\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t24.9\t1749\nG08\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t20.5\t1462\nG09\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t17.2\t2018\nG10\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t15.9\t1470\nG11\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t16.5\t1106\nG12\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t17.2\t1425\nG13\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t19.5\t1152\nG14\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t14.7\t612\nG15\t\t2/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t8\t544\nG16\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t29.9\t1998\nG17\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t22\t2388\nG18\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t33.5\t3350\nG19\t\t1/2\t\t\t\t100%\t90%\t100%\t97%\t91%\t0.017\t20.1\t1912\nG20\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t48\t1778\nG21\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t21.9\t768\nG22\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t17\t1534\nG23\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t60.9\t1953\nG24\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t22.7\t2364\nG25\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t35.1\t2014\nG26\t\t2/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t10.1\t682\nG27\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t82\t3758\nG28\t\t2/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t15.9\t1506\nG29\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t30.6\t2032\nG30\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t25.9\t1620\nG31\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t18.9\t1852\nG32\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t19\t2504\nG33\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t20.6\t2401\nG34\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t16.5\t1712\nG35\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t22.4\t1771\nG36\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t69.1\t3538\nG37\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t19.4\t2041\nG38\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t9.4\t776\nG39\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t30.1\t2566\nG40\t\t0/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t7.8\t344\nG41\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t25.8\t2541\nG42\t\t0/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t41.1\t2083\nG43\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t20.7\t2383\nG44\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t33.1\t2550\nG45\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t6.5\t667\nG46\t\t0/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t7.6\t704\nG47\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t23.7\t2143\nG48\t\t0/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t36.1\t2397\nG49\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t23.8\t1917\nG50\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t41.7\t1346\nG51\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t22.5\t1539\nG52\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t17.9\t1691\nG53\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t6.8\t850\nG54\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t29.9\t3416\nG55\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t25\t1929\nG56\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t22.7\t2536\nG57\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t17.9\t1043\nG58\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t94.5\t2533\nG59\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t19.3\t1680\nG60\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t100\t1443\nG61\t\t0/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t12.2\t626\nG62\t\t2/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t18.7\t810\nG63\t\t0/2\t\t\t\t100%\t80%\t100%\t93%\t0%\t0.017\t103.6\t2941\nG64\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t32.7\t3188\nG65\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t16.6\t1114\nG66\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t34.9\t3601\nG67\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0\t22.1\t1481\nG68\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t74.2\t3676\nG69\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.018\t29.1\t1849\nG70\t\t1/2\t\t\t\t100%\t100%\t100%\t100%\t100%\t0.017\t24.6\t1182\n*Leaks tested with a lite version of the regular clean dataset.\nStatistics\nTotal runs: 70\nCompleted make percentage: 100%\nCompleted execution percentage: 100%\nCorrect queries percentage: 100%\nAverage leaks (regular dataset): 0MB\nAverage execution time: 29s\nAverage memory usage: 1818MB\nAverage validation score: 98%",
+    "json": [
+      {
+        "url": "https://li3.di.uminho.pt/config.json",
+        "data": {
+          "app": {
+            "name": "LI3 Automatic Testing"
+          },
+          "api": {
+            "baseUrl": "/api"
+          },
+          "groups": {
+            "emailPlaceholder": "numero@alunos.uminho.pt"
+          },
+          "testing": {
+            "queryCount": 3,
+            "projectDirectory": "trabalho-pratico",
+            "buildCommand": "make",
+            "reportPaths": [
+              "trabalho-pratico/relatorio-fase1.pdf",
+              "trabalho-pratico/relatorio-fase2.pdf"
+            ],
+            "testProgramPath": "trabalho-pratico/programa-testes",
+            "mainProgram": "./programa-principal",
+            "dataArgument": "<data-folder>",
+            "inputArgument": "<input>",
+            "leaksNote": "Leaks tested with a lite version of the regular clean dataset.",
+            "scheduleTimezone": "GMT",
+            "schedules": [
+              {
+                "times": [
+                  "02h",
+                  "06h",
+                  "10h",
+                  "14h",
+                  "18h",
+                  "22h"
+                ],
+                "dataset": "Small (~400MB)",
+                "invalidEntries": false,
+                "maxMemory": "4 GiB",
+                "maxTime": "5min"
+              },
+              {
+                "times": [
+                  "00h",
+                  "04h",
+                  "08h",
+                  "12h",
+                  "16h",
+                  "20h"
+                ],
+                "dataset": "Small (~400MB)",
+                "invalidEntries": true,
+                "maxMemory": "4 GiB",
+                "maxTime": "5min"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "url": "https://li3.di.uminho.pt/api/var/faqNotification/",
+        "data": false
+      },
+      {
+        "url": "https://li3.di.uminho.pt/api/test/202/stats",
+        "data": {
+          "totalRuns": 70,
+          "totalSucceededCompiles": 70,
+          "totalSucceededExecs": 70,
+          "totalQueries": 2100,
+          "totalCorrectQueries": 2097,
+          "averageTimeS": 28.6457142857143,
+          "averageLeaksMb": 0.0148285714285714,
+          "averageMemMb": 1818.20262857143,
+          "averageValidationScore": 98,
+          "info": "Private dataset, with invalid entries."
+        }
+      },
+      {
+        "url": "https://li3.di.uminho.pt/api/run/202",
+        "data": [
+          {
+            "testId": 202,
+            "repoId": "G01",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 16.2,
+            "maxMemoryMb": 1599.292,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G02",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 24,
+            "maxMemoryMb": 1353.472,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G03",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 25.9,
+            "maxMemoryMb": 1635.088,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G04",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 24,
+            "maxMemoryMb": 1545.864,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G05",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 28.8,
+            "maxMemoryMb": 1078.16,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G06",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 37.8,
+            "maxMemoryMb": 1502.988,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G07",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 24.9,
+            "maxMemoryMb": 1748.544,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G08",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 20.5,
+            "maxMemoryMb": 1462.116,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G09",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 17.2,
+            "maxMemoryMb": 2017.592,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G10",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 15.9,
+            "maxMemoryMb": 1470.112,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G11",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 16.5,
+            "maxMemoryMb": 1105.848,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G12",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 17.2,
+            "maxMemoryMb": 1425.3,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G13",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 19.5,
+            "maxMemoryMb": 1151.648,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G14",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 14.7,
+            "maxMemoryMb": 611.624,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G15",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 8,
+            "maxMemoryMb": 543.896,
+            "ignoreLeaks": true,
+            "report2": true,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G16",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 29.9,
+            "maxMemoryMb": 1997.888,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G17",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 22,
+            "maxMemoryMb": 2388.428,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G18",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 33.5,
+            "maxMemoryMb": 3349.62,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G19",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              9,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              1,
+              0
+            ],
+            "nDiffs": [
+              0,
+              1,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 20.1,
+            "maxMemoryMb": 1912.384,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 91,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G20",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 48,
+            "maxMemoryMb": 1777.92,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G21",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 21.9,
+            "maxMemoryMb": 768.276,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G22",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 17,
+            "maxMemoryMb": 1534.368,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G23",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 60.9,
+            "maxMemoryMb": 1952.74,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G24",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 22.7,
+            "maxMemoryMb": 2364.176,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G25",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 35.1,
+            "maxMemoryMb": 2013.572,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G26",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 10.1,
+            "maxMemoryMb": 682.212,
+            "ignoreLeaks": true,
+            "report2": true,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G27",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 82,
+            "maxMemoryMb": 3758.168,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G28",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 15.9,
+            "maxMemoryMb": 1505.976,
+            "ignoreLeaks": true,
+            "report2": true,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G29",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 30.6,
+            "maxMemoryMb": 2032.2,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G30",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 25.9,
+            "maxMemoryMb": 1620.14,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G31",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 18.9,
+            "maxMemoryMb": 1852.34,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G32",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 19,
+            "maxMemoryMb": 2503.792,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G33",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 20.6,
+            "maxMemoryMb": 2400.552,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G34",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 16.5,
+            "maxMemoryMb": 1712,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G35",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 22.4,
+            "maxMemoryMb": 1771.288,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G36",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 69.1,
+            "maxMemoryMb": 3538.372,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G37",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 19.4,
+            "maxMemoryMb": 2041.14,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G38",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 9.4,
+            "maxMemoryMb": 776.416,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G39",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 30.1,
+            "maxMemoryMb": 2566.288,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G40",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": false,
+            "memoryLeaksMb": 0.017,
+            "durationS": 7.8,
+            "maxMemoryMb": 343.54,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G41",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 25.8,
+            "maxMemoryMb": 2540.828,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G42",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": false,
+            "memoryLeaksMb": 0.017,
+            "durationS": 41.1,
+            "maxMemoryMb": 2083.252,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G43",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 20.7,
+            "maxMemoryMb": 2382.78,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G44",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 33.1,
+            "maxMemoryMb": 2550.352,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G45",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 6.5,
+            "maxMemoryMb": 666.88,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G46",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": false,
+            "memoryLeaksMb": 0.017,
+            "durationS": 7.6,
+            "maxMemoryMb": 703.52,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G47",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 23.7,
+            "maxMemoryMb": 2142.844,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G48",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": false,
+            "memoryLeaksMb": 0.017,
+            "durationS": 36.1,
+            "maxMemoryMb": 2397.416,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G49",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 23.8,
+            "maxMemoryMb": 1916.512,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G50",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 41.7,
+            "maxMemoryMb": 1346.448,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G51",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 22.5,
+            "maxMemoryMb": 1538.736,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G52",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 17.9,
+            "maxMemoryMb": 1691.116,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G53",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 6.8,
+            "maxMemoryMb": 849.536,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G54",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 29.9,
+            "maxMemoryMb": 3416.26,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G55",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 25,
+            "maxMemoryMb": 1929.364,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G56",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 22.7,
+            "maxMemoryMb": 2535.732,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G57",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 17.9,
+            "maxMemoryMb": 1042.864,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G58",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 94.5,
+            "maxMemoryMb": 2533.38,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G59",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 19.3,
+            "maxMemoryMb": 1680.484,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G60",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 100,
+            "maxMemoryMb": 1442.876,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G61",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": false,
+            "memoryLeaksMb": 0.017,
+            "durationS": 12.2,
+            "maxMemoryMb": 625.84,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G62",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 18.7,
+            "maxMemoryMb": 809.82,
+            "ignoreLeaks": true,
+            "report2": true,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G63",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              8,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              2,
+              0
+            ],
+            "nDiffs": [
+              0,
+              2,
+              0
+            ],
+            "report": false,
+            "memoryLeaksMb": 0.017,
+            "durationS": 103.6,
+            "maxMemoryMb": 2940.892,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 0,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G64",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 32.7,
+            "maxMemoryMb": 3188.216,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G65",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 16.6,
+            "maxMemoryMb": 1114.072,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G66",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 34.9,
+            "maxMemoryMb": 3601.068,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G67",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0,
+            "durationS": 22.1,
+            "maxMemoryMb": 1481.012,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G68",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 74.2,
+            "maxMemoryMb": 3676.192,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G69",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.018,
+            "durationS": 29.1,
+            "maxMemoryMb": 1849.016,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          },
+          {
+            "testId": 202,
+            "repoId": "G70",
+            "compiled": true,
+            "executed": true,
+            "timeout": false,
+            "outOfMemory": false,
+            "correctQueries": [
+              10,
+              10,
+              10
+            ],
+            "wrongQueries": [
+              0,
+              0,
+              0
+            ],
+            "nDiffs": [
+              0,
+              0,
+              0
+            ],
+            "report": true,
+            "memoryLeaksMb": 0.017,
+            "durationS": 24.6,
+            "maxMemoryMb": 1181.536,
+            "ignoreLeaks": true,
+            "report2": false,
+            "validationScore": 100,
+            "test": true
+          }
+        ]
+      },
+      {
+        "url": "https://li3.di.uminho.pt/api/test",
+        "data": [
+          {
+            "testId": 202,
+            "date": "2026-11-15",
+            "hour": "0h"
+          },
+          {
+            "testId": 201,
+            "date": "2026-11-14",
+            "hour": "22h"
+          },
+          {
+            "testId": 200,
+            "date": "2026-11-14",
+            "hour": "20h"
+          },
+          {
+            "testId": 199,
+            "date": "2026-11-14",
+            "hour": "18h"
+          },
+          {
+            "testId": 198,
+            "date": "2026-11-14",
+            "hour": "16h"
+          },
+          {
+            "testId": 197,
+            "date": "2026-11-14",
+            "hour": "14h"
+          },
+          {
+            "testId": 196,
+            "date": "2026-11-14",
+            "hour": "12h"
+          },
+          {
+            "testId": 195,
+            "date": "2026-11-14",
+            "hour": "10h"
+          },
+          {
+            "testId": 194,
+            "date": "2026-11-14",
+            "hour": "8h"
+          },
+          {
+            "testId": 193,
+            "date": "2026-11-14",
+            "hour": "6h"
+          },
+          {
+            "testId": 192,
+            "date": "2026-11-14",
+            "hour": "4h"
+          },
+          {
+            "testId": 191,
+            "date": "2026-11-14",
+            "hour": "2h"
+          }
+        ]
+      }
+    ]
   }
 }
